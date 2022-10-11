@@ -1,0 +1,38 @@
+#wrapper { background-color: #FFFFFF; 
+           width: 80%;
+		   margin: auto;
+           min-width: 800px;	   
+} 
+
+#topcolumn{ background-color: #FFFFFF;
+			height: 100px;
+			}
+
+#loginbutton{float:right;}
+
+#ordernowbutton{float:right;}
+
+#bottomcolumn{background-color: #F5F5DC;
+			height: 300px;}
+
+footer {font-size:70%;
+         text-align: center;
+		 clear: right;
+		 padding-top:20px;
+         padding-bottom:20px;
+		 background-color: #FFFFFF;
+}
+
+#navigationbar{
+			  color:#000000;
+}
+
+nav {
+	padding-top:70px;
+	align-items:flex-start;
+}
+nav a {	margin: 50px;
+		text-decoration: none;
+}
+nav a:link{color: #000000}
+nav a:visited{color: #FF00FF}
