@@ -5,14 +5,9 @@
     min-width: 800px;	   
 } 
 
-#topcolumn{ 
+#bottom-column{ 
 	background-color: #FFFFFF;
-	height: 100px;
 		}
-
-/* #loginbutton{float:right;}
-
-#ordernowbutton{float:right;} */
 
 footer {
 	font-size:70%;
@@ -62,6 +57,7 @@ li {
 	color: white;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	padding: 10px 30px;
+	float:right;
 }
 
 #login{

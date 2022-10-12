@@ -2,95 +2,120 @@
 
 <html>
 <head>
-    <title>Connectus</title>
+    <title><img src="./img/connectus.png">Connectus</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="main.css">
-    <script type="text/javascript" src="index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/main.css">
+	<style>table{margin: auto; border:0px solid #000066; width: 400px;}</style>
+    <script type="text/javascript" src="./JS/index.js"></script>
 </head>
 
 <body>
 <header>
-<div id = "wrapper">
-<div id = "topcolumn">
-    <!-- Login -->
-    <div id ='loginbutton'>
-        <img src=""> 
-        <span>Login</span>
-    </div>
 
     <!-- Navigation Bar -->
-	<div id = "navigationbar">
-    <nav>
-		<b> <a href="index.html">Home</a> &nbsp;
-			<a href="menu.html">Menu</a> &nbsp;
-			<a href="">Rewards</a> &nbsp;
-			<a href="">Locate Us</a> &nbsp;
-		</b>
+    <nav class="nav-bar">
+		<!-- <ul class="nav">  -->
+            <span>
+                <img class ="nav-bar-logo" src="./img/connectus.png" height="100px" width="150px">
+            </span>
+            <span class="nav-content">
+                <li><a class="nav-bar-content" href="index.html">Home</a></li> 
+                <li><a class="nav-bar-content" href="menu.html">Menu</a></li> 
+                <li><a class="nav-bar-content" href="rewards.html">Rewards</a></li>
+                <li><a class="nav-bar-content" href="locate.html">Locate Us</a></li>
+            <span>
+		<!-- <ul> -->
     </nav>
-	</div>
+
+
+    <!-- Login -->
+    <div id ='login-button'>
+        <img src=""> 
+        <span id="login">Login</span>
+    </div>
 
     <!-- Order Now  -->
-    <div id ='ordernowbutton'>
-        <button>Order Now</button>
+    <div id ='order-now-button'>
+        <img src="">
+        <span id="order-now">Order Now</span>
 	</div>
+
 </header>
 </div>
 
-<div id = "bottomcolumn">
+<div id="bottom-column">
+
 <table border = "0">
-	<h2>Coffee at JavaJam</h2>
+	<h2>Pizza</h2>
 	<tr>
-		<th><strong>Pepperoni pizza</strong></th>
-		<th><img src="pepperoni pizza.jpg" width="150" height="100" alt="cabin in wood"></th><!--https://unsplash.com/images/food/pizza-->
-			<td>pepperoni pizza made from the finest pork, smoked to maximum juiciness and tenderness. Topped with freshly made tomato sauce and 
-			the tasiest mozerella cheese.<br>
+	<div>
+		<!--<th><strong>Pepperoni pizza</strong></th>-->
+		<th width ="100px"><img src="./img/pepperoni pizza.jpg" width="150" height="100" alt="pepperoni pizza"><!--https://unsplash.com/images/food/pizza-->
+		<input type = "submit"  name = "button"  onclick = ""/></th>
+	</div>
+		<th width ="100px"><img src="./img/mushroom pizza.jpg" width="150" height="100" alt="mushroom pizza"><!--https://www.freepik.com/free-photos-vectors/pizza-top-view-->
+		<input type = "submit"  name = "button"  onclick = ""/></th>
 	</tr>
+	</table>
+<table border = "0">
+	<h2>Side Dishes</h2>
 	<tr>
-		<th><strong>Mushroom pizza</strong></th>
-		<th><img src="mushroom pizza.jpg" width="150" height="100" alt="cabin in wood"></th><!--https://www.freepik.com/free-photos-vectors/pizza-top-view-->
-			<td>pepperoni pizza made from the finest pork, smoked to maximum juiciness and tenderness. Topped with freshly made tomato sauce and 
-			the tasiest mozerella cheese.<br>
+		<th><img src="./img/french_fries.jpg" width="150" height="100" alt="french fries"><!--https://recipes.timesofindia.com/recipes/french-fries/rs54659021.cms-->
+		<input type = "submit"  name = "button"  onclick = ""/></th>
+		<th><img src="./img/coleslaw.jpg" width="150" height="100" alt="coleslaw"><!--https://www.inspiredtaste.net/26522/coleslaw-recipe/-->
+		<input type = "submit"  name = "button"  onclick = ""/></th>
+	</tr>
+	</table>
+	
+<table border = "0">
+	<h2>Beverages</h2>
+	<tr>
+		<th><img src="./img/coke_logo.png" width="150" height="100" alt="coke logo"><!--https://recipes.timesofindia.com/recipes/french-fries/rs54659021.cms-->
+		<input type = "submit"  name = "button"  onclick = ""/></th>
+		<th><img src="./img/green_tea.jpg" width="150" height="100" alt="greentea"><!--https://www.pokka.co/our-products/product-detail?cat=tea&subcat=green-tea-->
+		<input type = "submit"  name = "button"  onclick = ""/></th>
 	</tr>
 	</table>
 </div>
 
+
 <footer>
+    <div id="footer">
+        <span>
+            <img src="./img/connectus.png" width="100px" height="80px">
+            <span>Connectus Pizza Singapore</span>
+            <span>6362 8890</span>
+        </span>
 
-    <!-- footer-left -->
-    <span></span>
-        <img src="./img/connectus.png">
-        <h1></h1>
-    </span>
-
-    <!-- footer right -->
-    <table class="further-info">
-        <tr>
-            <td>Company</td>
-            <td>Help</td>
-            <td>Follow Us</td>
-        </tr>
-        <tr>
-            <td>Join Us</td>
-            <td>FAQ</td>
-            <td>Facebook</td>
-        </tr>
-        <tr>
-            <td>About Us</td>
-            <td></td>
-            <td>Instagram</td>
-        </tr>
-        <tr>
-            <td>Contact Us</td>
-            <td></td>
-            <td>Youtube</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>TikTok</td>
-        </tr>
-    </table>
-
+        <table class="further-info">
+            <tr>
+                <td class="header">Company</td>
+                <td class="header">Help</td>
+                <td class="header">Follow Us</td>
+            </tr>
+            <tr>
+                <td>Join Us</td>
+                <td>FAQ</td>
+                <td>Facebook</td>
+            </tr>
+            <tr>
+                <td>About Us</td>
+                <td></td>
+                <td>Instagram</td>
+            </tr>
+            <tr>
+                <td>Contact Us</td>
+                <td></td>
+                <td>Youtube</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>TikTok</td>
+            </tr>
+        </table>
+    </div>
 </footer>
 
 </div>

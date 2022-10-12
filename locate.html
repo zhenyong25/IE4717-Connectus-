@@ -6,6 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/main.css">
+	<style>.float-container {
+    padding: 20px;
+}
+
+.float-child {
+    width: 44%;
+	height:300px;
+    float: left;
+    padding: 20px;
+}  </style>
     <script type="text/javascript" src="./JS/index.js"></script>
 </head>
 
@@ -39,44 +49,24 @@
         <img src="">
         <span id="order-now">Order Now</span>
 	</div>
+
 </header>
 
-
-<div>
-    <img src="./img/main-pizza.jfif" width="40%" height="30%"> 
-</div>
-
 <div id="bottom-column">
-
-    <div id="history-pizza">
-        <div class="column">
-            <img class="history-pizza-content" src="./img/italy.png">
-        </div>
-        <div class="column">
-            <span class="history-pizza-content">Modern day Pizzas were invented in a city called Naples located in Italy. These delicious food were initially consumed by the poors in
-            the region of Naples. Long flatbread topped off with inexpensive garnishes such as tomato, cheese, oil, etc. These 'pizzas' was sold by food vendors
-            which was meant to be eaten quickly and without fuss. Today Pizzas are found in all corner of the world.</span>
-        </div>
-        <div class="column">
-            <h1 class="history-pizza-content">History</h1>
-        </div>
-    </div>
-       
-    <div id="history-res">  
-        <h1>History of restuarant</h1>
-        <p>history of restaurant</p>
-        <img src="./img/pizza_restaurant.jfif">
-    </div>
-
-    <div id="chef">
-        <img src="./img/pizza_chef.jpg">
-        <h1>Our Chefs</h1>
-            <p>Our chefs, Chef Leonardo, have been trained in many italian restaurant all around the world. With 40 years of experience, he has been overlooking the process
-            of every single pizza coming out of our kitchen. From handpicking only the very fresh ingridents to temperature of the stove, Chef Leonardo is involved in every
-            step to ensure only the freshest and tasiest pizza comes to your table!</p>
-        <h1>Our Chefs</h1>
-    </div>
+	<div class="float-container">
+	<div class="float-child">
+	<h1>Find pizza near me</h1>
+	<input type="text" id="textbox" size="40" value="search by postal code or street name" \>
+	<h1>Jurong West<br>
+		Nanyang Drive Ave, 639798<br>
+		11am to 1130pm</h1>
+	</div>
+	<div class="float-child">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7136383779975!2d103.68094601329543!3d1.3483098990166276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0f0a99014463%3A0xb8bb0800c52d8219!2sNanyang%20Technological%20University!5e0!3m2!1sen!2ssg!4v1665564415608!5m2!1sen!2ssg" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
+</div>
+</div>
+
 
 <footer>
     <div id="footer">
@@ -116,6 +106,5 @@
     </div>
 </footer>
 
-</div>
 </body>
 </html>
