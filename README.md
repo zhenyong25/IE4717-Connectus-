@@ -25,11 +25,11 @@ The objective of this project is to design a web application for pizza order del
 6. Order Successful Page 
 
 # 3. Rewards Page 
-1. Redeem Points 
+1. Redeem Points (5%)
 2. Redeem Vouchers 
 3. Pop-up Notifications
 4. View My Coupon 
 
 # 4. Locate Us Page
-1. Locate Us 
+1. Locate Us (5%)
 
