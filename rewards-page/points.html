@@ -12,40 +12,42 @@
 <body>
 
     <!-- Card to Show Current Tier  -->
-    <div>
+    <div id="connectus-points">
         <h1>Connectus Points</h1>
         <p>Get 1,010 more points by 31 Dec 2022 to maintain goal </p>
     </div>
 
     <!-- Choose to either redeem points or redeem vouchers -->
-    <div>
+    <div id="redeem-choice">
         <div>Redeem Points</div>
         <div>Redeem Vouchers</div>
     </div>
 
-    <table>
-        <tr>
-            <td>
-                <img>
-                <span class="redeem-button">Redeem</span>
-            </td>
-            <td>
-                <img>
-                <span class="redeem-button">Redeem</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img>
-                <span class="redeem-button">Redeem</span>
-            </td>
-            <td>
-                <img>
-                <span class="redeem-button">Redeem</span>
-            </td>
-        </tr>
-
-    </table>
+    <form action="../php/points.php" method="post">
+        <table>
+            <tr>
+                <td>
+                    <img>
+                    <span class="redeem-button" onclick="">Redeem</span>
+                </td>
+                <td>
+                    <img>
+                    <span class="redeem-button" onclick="">Redeem</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img>
+                    <span class="redeem-button" onclick="">Redeem</span>
+                </td>
+                <td>
+                    <img>
+                    <span class="redeem-button" onclick="">Redeem</span>
+                </td>
+            </tr>
+        
+        </table>
+    </form>
 
     <footer></footer>
 </body>

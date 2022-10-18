@@ -90,4 +90,11 @@ td{
 
 .footer {
 	padding-top: 0px;
+	display: flex; 
+	justify-content: center;
+}
+
+#container{
+	display: flex;
+	justify-content: center;
 }
