@@ -1,3 +1,15 @@
+<?php //catalog.php
+session_start();
+if (!isset($_SESSION['cart'])){
+	$_SESSION['cart'] = array();
+}
+if (isset($_GET['buy'])) {
+	$_SESSION['cart'][] = $_GET['buy'];
+	header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
+	exit();
+}
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -43,7 +55,17 @@
 
 </header>
 </div>
-
+		<?php
+		$items = array(
+			'Pepperoni Pizza',
+			'Mushroom_Pizza',
+			'French Fries',
+			'Coleslaw',
+			'Cola',
+			'Green Tea'
+			);
+		$prices = array(15.00, 20.00, 6.00, 4.00,2.00,2.00);
+		?>
 <div id="bottom-column">
 
 <table border = "0">
@@ -52,20 +74,48 @@
 	<div>
 		<!--<th><strong>Pepperoni pizza</strong></th>-->
 		<th width ="100px"><img src="./img/pepperoni pizza.jpg" width="150" height="100" alt="pepperoni pizza"><!--https://unsplash.com/images/food/pizza-->
-		<br>
+		<p><?php for ($i=0; $i<1; $i++){
+	echo "".$items[$i]."";
+	echo "</br>";
+	echo "$" .number_format($prices[$i], 2). "";
+	echo "</br>";
+	echo "<a href='" .$_SERVER['PHP_SELF']. '?buy=' .$i. "'>Add to cart</a>";
+	echo "";
+} ?></p>
 		<a href="./menu-page/customize.php">Add</a></th>
 	</div>
 		<th width ="100px"><img src="./img/mushroom pizza.jpg" width="150" height="100" alt="mushroom pizza"><!--https://www.freepik.com/free-photos-vectors/pizza-top-view-->
-		<input type = "submit"  name = "button"  onclick = ""/></th>
+		<p><?php for ($i=1; $i<2; $i++){
+	echo "".$items[$i]."";
+	echo "</br>";
+	echo "$" .number_format($prices[$i], 2). "";
+	echo "</br>";
+	echo "<a href='" .$_SERVER['PHP_SELF']. '?buy=' .$i. "'>Add to cart</a>";
+	echo "";
+} ?></p>
 	</tr>
 	</table>
 <table border = "0">
 	<h2>Side Dishes</h2>
 	<tr>
 		<th><img src="./img/french_fries.jpg" width="150" height="100" alt="french fries"><!--https://recipes.timesofindia.com/recipes/french-fries/rs54659021.cms-->
-		<input type = "submit"  name = "button"  onclick = ""/></th>
+		<p><?php for ($i=2; $i<3; $i++){
+	echo "".$items[$i]."";
+	echo "</br>";
+	echo "$" .number_format($prices[$i], 2). "";
+	echo "</br>";
+	echo "<a href='" .$_SERVER['PHP_SELF']. '?buy=' .$i. "'>Add to cart</a>";
+	echo "";
+} ?></p>
 		<th><img src="./img/coleslaw.jpg" width="150" height="100" alt="coleslaw"><!--https://www.inspiredtaste.net/26522/coleslaw-recipe/-->
-		<input type = "submit"  name = "button"  onclick = ""/></th>
+				<p><?php for ($i=3; $i<4; $i++){
+	echo "".$items[$i]."";
+	echo "</br>";
+	echo "$" .number_format($prices[$i], 2). "";
+	echo "</br>";
+	echo "<a href='" .$_SERVER['PHP_SELF']. '?buy=' .$i. "'>Add to cart</a>";
+	echo "";
+} ?></p>
 	</tr>
 	</table>
 	
@@ -73,11 +123,30 @@
 	<h2>Beverages</h2>
 	<tr>
 		<th><img src="./img/coke_logo.png" width="150" height="100" alt="coke logo"><!--https://recipes.timesofindia.com/recipes/french-fries/rs54659021.cms-->
-		<input type = "submit"  name = "button"  onclick = ""/></th>
+				<p><?php for ($i=4; $i<5; $i++){
+	echo "".$items[$i]."";
+	echo "</br>";
+	echo "$" .number_format($prices[$i], 2). "";
+	echo "</br>";
+	echo "<a href='" .$_SERVER['PHP_SELF']. '?buy=' .$i. "'>Add to cart</a>";
+	echo "";
+} ?></p>
 		<th><img src="./img/green_tea.jpg" width="150" height="100" alt="greentea"><!--https://www.pokka.co/our-products/product-detail?cat=tea&subcat=green-tea-->
-		<input type = "submit"  name = "button"  onclick = ""/></th>
+						<p><?php for ($i=5; $i<6; $i++){
+	echo "".$items[$i]."";
+	echo "</br>";
+	echo "$" .number_format($prices[$i], 2). "";
+	echo "</br>";
+	echo "<a href='" .$_SERVER['PHP_SELF']. '?buy=' .$i. "'>Add to cart</a>";
+	echo "";
+} ?></p>
 	</tr>
-	</table>
+	</table
+	
+	<p>Your shopping cart contains <?php
+	echo count($_SESSION['cart']); ?> items.</p>
+	<p><a href="./menu-page/cart.php">View your cart</a></p>
+
 </div>
 
 
