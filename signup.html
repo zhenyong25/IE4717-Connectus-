@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Connectus</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/signup.css">
+    <script type="text/javascript" src="./JS/index.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="nav-content">
+            <li><img class ="nav-bar-logo" src="./img/connectus.png" height="100px" width="150px"></li>
+            <li><a class="nav-bar-content" href="index.html">Home</a></li> 
+            <li><a class="nav-bar-content" href="menu.html">Menu</a></li> 
+            <li><a class="nav-bar-content" href="rewards.html">Rewards</a></li>
+            <li><a class="nav-bar-content" href="locate.html">Locate Us</a></li>
+            <li>
+                <a href="login.html" id="login">
+                    <img class="user-icon" src="./img/user-icon.png" height="20px" width="20px">
+                Login</a>
+            </li>
+        </div>
+    </header>
+
+    <div class="signup">Sign Up</div>
+
+    <div class="signup-box">
+        <form action="signup.php" method="post">
+            <div>
+                <div>Account Information</div>
+                    <label class="form-content">E-mail Address</label><br>
+                    <input type="text" onchange="email_address()" required></form><br>
+                    <label class="form-content">Password</label><br>
+                    <input type="text" onchange="password()" required><br>
+                    <label class="form-content">Retype Password</label><br>
+                    <input type="text" onchange="password()" required><br>
+
+                <div>Personal Information</div>
+                    <label class="form-content">Name</label><br>
+                    <input type="text" onchange="name()" required></form><br>
+                    <label class="form-content">Contact Number</label><br>
+                    <input type="text" onchange="contact_number()" required><br>
+                    <input class="checkbox" type="checkbox" required>
+                    <span class="checkbox-content">Yes, I have read and agree to the terms and conditions, PRIVACY
+                    AND PERSONAL DATA PROTECTION POLICY and Web Order Policy</span><br> 
+                    <input class="checkbox" type="checkbox" required>
+                    <span class="checkbox-content">Yes, I would like to receive latest promotions and offers from Connectus. 
+                    I can unsubscribe anytime by using the “unsubscribe” link at the bottom of each 
+                    promotional email</span>
+            </div>
+
+            <input class="sign-in-button" type="submit" value="Sign Up"><br>
+        </form>
+    </div>
+</body>
+
+<footer>
+
+</footer>
+    <script type="text/javascript" src="./JS/login.js"></script>
+</html>
