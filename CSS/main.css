@@ -22,6 +22,33 @@ footer {
 		color:#000000;
 }
 
+.content-img {
+	height: 250px; 
+	width: 30% ; 
+	margin: 20px; 
+	border-radius: 15px; 
+}
+
+.content-txt {
+	height: 200px; 
+	width: 30%; 
+	margin: 20px; 
+	text-align: left;
+	margin-top: 40px;
+}
+
+.content-intro{
+	height: 200px; 
+	width: 10%; 
+	margin: 20px; 
+	margin-top: 40px;
+}
+
+.nav-content{
+	display: flex; 
+	justify-content: center;
+}
+
 
 .nav-bar a:link{
 	color: #000000
@@ -37,8 +64,7 @@ footer {
 	text-decoration: none;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-weight: 500;
-	padding: 30px;
-	margin: 0px;
+	padding: 30px; 
 }
 
 nav {
@@ -52,13 +78,6 @@ li {
 	margin: 0px;
 }
 
-#order-now {
-	background-color: #0094FF;
-	color: white;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	padding: 10px 30px;
-	float:right;
-}
 
 #login{
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -97,4 +116,11 @@ td{
 #container{
 	display: flex;
 	justify-content: center;
+}
+
+#login {
+	list-style: none;
+	text-decoration: none;
+	padding: 40px; 
+	background-color: #0094FF;
 }
