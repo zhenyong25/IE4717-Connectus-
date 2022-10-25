@@ -4,4 +4,46 @@
     font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
+    padding: 5px;
+}
+
+.account-info, .personal-info {
+    padding: 20px; 
+    margin-left: auto;
+    margin-right: auto; 
+    width: 100%; 
+}
+
+.form-header {
+    font-size: 1.25rem; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sign-up-button{
+    background-color:#0094FF ;
+    color:#FFFFFF; 
+    border-radius: 15px;
+    padding: 10px 40px; 
+    border-color: #FFFFFF;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 15px auto; 
+}
+
+.signup-box{
+    margin: auto;
+}
+
+.checkbox-content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto; 
+}
+
+.checkbox-click{
+    margin: auto; 
+    width: 50%; 
+    padding: 0.5rem; 
 }

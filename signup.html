@@ -31,30 +31,47 @@
 
     <div class="signup-box">
         <form action="signup.php" method="post">
-            <div>
-                <div>Account Information</div>
-                    <label class="form-content">E-mail Address</label><br>
-                    <input type="text" onchange="email_address()" required></form><br>
-                    <label class="form-content">Password</label><br>
-                    <input type="text" onchange="password()" required><br>
-                    <label class="form-content">Retype Password</label><br>
-                    <input type="text" onchange="password()" required><br>
+                <div class="form-header">Account Information</div>
+                    <table class="account-info">
+                        <tr>
+                            <td><label class="form-content">E-mail Address *</label></td>
+                            <td><input type="text" onchange="email_address()" required></td>
+                        <tr>
+                        <tr>
+                            <td><label class="form-content">Password *</label></td>
+                            <td><input type="text" onchange="password()" required></td>
+                        </tr>
+                        <tr>
+                            <td><label class="form-content">Retype Password *</label></td>
+                            <td><input type="text" onchange="password()" required></td>
+                        </tr>
+                    </table>
+                <div class="form-header">Personal Information</div>
+                    <table class="personal-info">
+                        <tr>
+                            <td><label class="form-content">Name *</label></td>
+                            <td><input type="text" onchange="name()" required></td>
+                        </tr>
+                        <tr>
+                            <td><label class="form-content">Contact Number *</label></td>
+                            <td><input type="text" onchange="contact_number()" required></td>
+                        </tr>
+                    </table>
+                        
+                    <div class="checkbox-click">
+                        <input class="checkbox" type="checkbox" required>
+                        <span class="checkbox-content">Yes, I have read and agree to the terms and conditions, <a href="">PRIVACY
+                        AND PERSONAL DATA PROTECTION POLICY</a> and Web Order Policy</span>
+                    </div>
 
-                <div>Personal Information</div>
-                    <label class="form-content">Name</label><br>
-                    <input type="text" onchange="name()" required></form><br>
-                    <label class="form-content">Contact Number</label><br>
-                    <input type="text" onchange="contact_number()" required><br>
-                    <input class="checkbox" type="checkbox" required>
-                    <span class="checkbox-content">Yes, I have read and agree to the terms and conditions, PRIVACY
-                    AND PERSONAL DATA PROTECTION POLICY and Web Order Policy</span><br> 
-                    <input class="checkbox" type="checkbox" required>
-                    <span class="checkbox-content">Yes, I would like to receive latest promotions and offers from Connectus. 
-                    I can unsubscribe anytime by using the “unsubscribe” link at the bottom of each 
-                    promotional email</span>
+                    <div class="checkbox-click">
+                        <input class="checkbox" type="checkbox" required>
+                        <span class="checkbox-content">Yes, I would like to receive latest promotions and offers from Connectus. 
+                        I can unsubscribe anytime by using the “unsubscribe” link at the bottom of each 
+                        promotional email</span>
+                    </div>
             </div>
-
-            <input class="sign-in-button" type="submit" value="Sign Up"><br>
+            <input class="sign-up-button" type="submit" value="Sign Up"><br>
         </form>
     </div>
 </body>
