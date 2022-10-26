@@ -101,7 +101,7 @@ td{
 
 .further-info {
 	background-color: #D9D9D9;
-	float: right;
+	display: flex;
 }
 
 .footer {

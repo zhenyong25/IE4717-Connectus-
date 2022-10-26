@@ -17,7 +17,7 @@
             <li><img class ="nav-bar-logo" src="./img/connectus.png" height="100px" width="150px"></li>
             <li><a class="nav-bar-content" href="index.html">Home</a></li> 
             <li><a class="nav-bar-content" href="menu.html">Menu</a></li> 
-            <li><a class="nav-bar-content" href="rewards.html">Rewards</a></li>
+            <li><a class="nav-bar-content" href="./rewards-page/points.html">Rewards</a></li>
             <li><a class="nav-bar-content" href="locate.html">Locate Us</a></li>
             <li>
                 <a href="login.html" id="login">
@@ -33,14 +33,15 @@
         <form action="" method="post">
             <div>
                 <label class="form-content">E-mail Address</label><br>
-                <input type="text" onchange="email_address()"></form><br>
+                <input class="form-input" type="text" onchange="email_address()"></form><br>
                 <label class="form-content">Password</label><br>
-                <input type="text" onchange="password()">
+                <input class="form-input" type="text" onchange="password()">
             </div>
-            <div><a href="">Forget your password?</a></div>
+            <div class="reset-link"><a href="reset.html">Forget your password?</a></div>
             <input class="sign-in-button" type="submit" value="Sign In">
         </form>
-        <div>
+
+        <div class="no-account">
             <span>Don't have an account?</span>
             <span><a href="signup.html">Sign Up Now</a></span>
         </div>

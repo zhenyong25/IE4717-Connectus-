@@ -9,10 +9,17 @@
 
 
 .form-content{
+    display: flex; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    margin-bottom: 10px; 
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.form-input{
+    display: flex;
+    margin: auto;
 }
 
 .sign-in-button{
@@ -21,10 +28,20 @@
     border-radius: 15px;
     padding: 10px 40px; 
     border-color: #FFFFFF;
-    margin: auto; 
+    display: flex;
+    margin: 10px auto; 
 }
 
 .checkbox-content{
     width: 30px;
     height: 20px; 
+}
+
+.no-account {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.reset-link{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
