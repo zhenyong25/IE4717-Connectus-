@@ -1,0 +1,56 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: sticky;
+  }
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #0094FF;
+    color: #FFFFFF;
+  }
+
+  .flex-container{
+    display: flex;
+  }
+
+  .search-bar{
+    margin: 20px; 
+  }
+
+.find-me{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 30px;
+}
+
+.search-location{
+    height: 25px;
+}
+
+.map{
+    margin: 20px; 
+}
+
+.view-map{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 25px;
+}
+
+.search-bar{
+    margin-left: 80px; 
+}
