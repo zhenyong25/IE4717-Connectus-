@@ -40,7 +40,7 @@ footer {
 	margin-top: 40px;
 }
 
-.nav-content{
+.nav-content {
 	display: flex; 
 	justify-content: center;
 }
@@ -60,8 +60,8 @@ footer {
 	text-decoration: none;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-weight: 500;
-	padding: 30px; 
-	vertical-align: middle;
+	padding: 42px; 
+	margin: auto; 
 }
 
 nav {
@@ -78,6 +78,7 @@ li {
 
 #login{
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	padding: 20px 40px; 
 }
 
 .history-pizza{
@@ -87,11 +88,6 @@ li {
 .column{
 	flex: 33.33%; 
 	padding: 5px;
-}
-
-.header{
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-weight: bold;
 }
 
 td{
@@ -121,4 +117,13 @@ td{
 	padding: 40px; 
 	background-color: #0094FF;
 }
+
+li a {
+    display: block;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
 
