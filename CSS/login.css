@@ -4,22 +4,26 @@
     font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
 }
 
 
 .form-content{
-    display: flex; 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: block; 
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    margin-left: auto;
-    margin-right: auto; 
+    margin-left: 35%;
+    font-weight: bold;
 }
 
 .form-input{
-    display: flex;
+    display: block;
     margin: auto;
+    border-radius: 5px;
+    border-color:#0094FF;  
+    height: 25px;
+    width: 380px; 
 }
 
 .sign-in-button{
@@ -30,6 +34,7 @@
     border-color: #FFFFFF;
     display: flex;
     margin: 10px auto; 
+    cursor: pointer;
 }
 
 .checkbox-content{
@@ -40,8 +45,16 @@
 .no-account {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
+    font-size: small;
 }
 
 .reset-link{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 50%; 
+    margin-top: 20px;
 }
+
+.reset-link a{
+    font-size: small;
+}
+

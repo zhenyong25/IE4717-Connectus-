@@ -30,13 +30,11 @@
     <div class="login">Login</div>
 
     <div class="login-box">
-        <form action="" method="post">
-            <div>
+        <form action="login.php" method="post">
                 <label class="form-content">E-mail Address</label><br>
-                <input class="form-input" type="text" onchange="email_address()"></form><br>
+                <input class="form-input" type="text" onchange="email_address()" placeholder="Email Address" required><br>
                 <label class="form-content">Password</label><br>
-                <input class="form-input" type="text" onchange="password()">
-            </div>
+                <input class="form-input" type="text" onchange="password()" placeholder="Password" required>
             <div class="reset-link"><a href="reset.html">Forget your password?</a></div>
             <input class="sign-in-button" type="submit" value="Sign In">
         </form>
