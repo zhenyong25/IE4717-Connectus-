@@ -32,9 +32,9 @@
     <div class="login-box">
         <form action="login.php" method="post">
                 <label class="form-content">E-mail Address</label><br>
-                <input class="form-input" type="text" onchange="email_address()" placeholder="Email Address" required><br>
+                <input class="form-input" id="account-email" type="text" onchange="validateEmail();" placeholder="Email Address" required><br>
                 <label class="form-content">Password</label><br>
-                <input class="form-input" type="text" onchange="password()" placeholder="Password" required>
+                <input class="form-input" id ="account-password" type="text" onchange="validatePassword();" placeholder="Password" required>
             <div class="reset-link"><a href="reset.html">Forget your password?</a></div>
             <input class="sign-in-button" type="submit" value="Sign In">
         </form>
