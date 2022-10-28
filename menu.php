@@ -8,6 +8,30 @@ if (isset($_GET['buy'])) {
 	header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
 	exit();
 }
+if (isset($_GET['empty'])) {
+	unset($_SESSION['cart']);
+	header('location: ' . $_SERVER['PHP_SELF']);
+	exit();
+}
+
+$db = new mysqli('localhost', 'root', '', 'connectus_1');
+
+// Check connection
+if ($db->connect_errno) {
+	echo 'Error: Could not connect to database. Please try again later.';
+	exit();
+}
+
+// Get the latest prices
+$getPrices = 'SELECT * FROM prices';
+$prices = $db->query($getPrices)->fetch_object();
+$peperroni_pizza_price= $prices->peperroni_pizza;
+$mushroom_pizza_price= $prices->mushroom_pizza;
+$french_fries_price= $prices->french_fries;
+$coleslaw_price= $prices->coleslaw;
+$cola_price= $prices->coke;
+$green_tea_price= $prices->green_tea;
+
 ?>
 
 <!DOCTYPE html>
@@ -24,36 +48,24 @@ if (isset($_GET['buy'])) {
 
 <body>
 <header>
+    <header>
+        <!-- Navigation Bar -->
+        <div class="nav-content">
+            <li><img class ="nav-bar-logo" src="./img/connectus.png" height="100px" width="150px" href="index.html"></li>
+            <li><a class="nav-bar-content" href="index.html">Home</a></li> 
+            <li><a class="nav-bar-content" href="menu.php">Menu</a></li> 
+            <li><a class="nav-bar-content" href="rewards.html">Rewards</a></li>
+            <li><a class="nav-bar-content" href="locate.html">Locate Us</a></li>
+			<li><a class="nav-bar-content" href="./menu-page/admin_menu.php">admin page</a></li>
+            <li class="login-block">
+                <a href="login.html" id="login">
+                    <img class="user-icon" src="./img/user-icon.png" height="20px" width="20px">
+                Login</a>
+            </li>
+        <div>
+    </header>
 
-    <!-- Navigation Bar -->
-    <nav class="nav-bar">
-		<!-- <ul class="nav">  -->
-            <span>
-                <img class ="nav-bar-logo" src="./img/connectus.png" height="100px" width="150px">
-            </span>
-            <span class="nav-content">
-                <li><a class="nav-bar-content" href="index.html">Home</a></li> 
-                <li><a class="nav-bar-content" href="menu.html">Menu</a></li> 
-                <li><a class="nav-bar-content" href="rewards.html">Rewards</a></li>
-                <li><a class="nav-bar-content" href="locate.html">Locate Us</a></li>
-            <span>
-		<!-- <ul> -->
-    </nav>
 
-
-    <!-- Login -->
-    <div id ='login-button'>
-        <img src=""> 
-        <span id="login">Login</span>
-    </div>
-
-    <!-- Order Now  -->
-    <div id ='order-now-button'>
-        <img src="">
-        <span id="order-now">Order Now</span>
-	</div>
-
-</header>
 </div>
 		<?php
 		$items = array(
@@ -64,7 +76,7 @@ if (isset($_GET['buy'])) {
 			'Cola',
 			'Green Tea'
 			);
-		$prices = array(15.00, 20.00, 6.00, 4.00,2.00,2.00);
+		$prices = array($peperroni_pizza_price, $mushroom_pizza_price, $french_fries_price, $coleslaw_price,$cola_price,$green_tea_price);
 		?>
 <div id="bottom-column">
 
@@ -82,7 +94,6 @@ if (isset($_GET['buy'])) {
 	echo "<a href='" .$_SERVER['PHP_SELF']. '?buy=' .$i. "'>Add to cart</a>";
 	echo "";
 } ?></p>
-		<a href="./menu-page/customize.php">Add</a></th>
 	</div>
 		<th width ="100px"><img src="./img/mushroom pizza.jpg" width="150" height="100" alt="mushroom pizza"><!--https://www.freepik.com/free-photos-vectors/pizza-top-view-->
 		<p><?php for ($i=1; $i<2; $i++){
