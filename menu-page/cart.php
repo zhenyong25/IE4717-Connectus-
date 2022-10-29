@@ -1,13 +1,38 @@
-<?php  //cart.php
+<?php //catalog.php
 session_start();
 if (!isset($_SESSION['cart'])){
 	$_SESSION['cart'] = array();
 }
+if (isset($_GET['buy'])) {
+	$_SESSION['cart'][] = $_GET['buy'];
+	header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
+	exit();
+}
+
 if (isset($_GET['empty'])) {
 	unset($_SESSION['cart']);
 	header('location: ' . $_SERVER['PHP_SELF']);
 	exit();
 }
+$db = new mysqli('localhost', 'root', '', 'connectus_1');
+
+// Check connection
+if ($db->connect_errno) {
+	echo 'Error: Could not connect to database. Please try again later.';
+	exit();
+}
+
+// Get the latest prices
+$getPrices = 'SELECT * FROM prices';
+$prices = $db->query($getPrices)->fetch_object();
+$peperroni_pizza_price= $prices->peperroni_pizza;
+$mushroom_pizza_price= $prices->mushroom_pizza;
+$french_fries_price= $prices->french_fries;
+$coleslaw_price= $prices->coleslaw;
+$cola_price= $prices->coke;
+$green_tea_price= $prices->green_tea;
+
+$db->close();
 ?>
 <html>
 <head>
@@ -59,7 +84,7 @@ if (isset($_GET['empty'])) {
 			'Cola',
 			'Green Tea'
 			);
-		$prices = array(15.00, 20.00, 6.00, 4.00,2.00,2.00);
+		$prices = array($peperroni_pizza_price, $mushroom_pizza_price, $french_fries_price, $coleslaw_price,$cola_price,$green_tea_price);
 		?>
 <table border="1">
 	<thead>
@@ -71,7 +96,7 @@ if (isset($_GET['empty'])) {
 	</tr>
 	</thead>
 	<tbody>
-	<form id="order-form" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">>
+	<form id="order-form" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 <?php
 $total = 0;
 for ($i=0; $i < count($_SESSION['cart']); $i++){
