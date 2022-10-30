@@ -48,32 +48,31 @@
     <div class="search-bar">
         <div class="find-me">Find Pizza Near Me</div>
 
-        <form action="./php/location.php" method="get">
-            <input class="search-location" type="text" id="textbox" size="40" placeholder="Search by Postal Code or Street Name" height="100px">
+        <form action="./php/location.php" method="post">
+            <input class="search-location" name="location" type="text" id="textbox" size="40" placeholder="Search by Postal Code or Street Name" height="100px">
             <input class="submit-search-location" type="submit" name="submit" value="Search" height="100px"> 
         </form>
 
+        <!-- php -->
         <?php
+            $location = $_POST['location']; 
 
-            $location = trim($_GET['location']); 
+            @$db = new mysqli ('localhost','root','','connectus'); 
 
-            @$db = new mysqli ('localhost','root','','connectus')
-
-            if (mysqli_connect_errno()){
-                echo 'Error: Could not connect to database. Please try again later.'; 
-                exit; 
+            if(mysqli_connect_errno()) {
+                echo 'Error: Could not connect to database. Please try again later.';
+                exit;
             }
-
-            $query = "select address from locations where ".$location." = locations.location"; 
+    
+            $query = "SELECT address FROM locations WHERE ".$location." LIKE locations.location"; 
             $results = $db->query($query); 
 
             $location_address = $results-> num_rows; 
 
-            echo "<p>$location_address</p>"
+            echo "<p>$results</p>"; 
 
             $result->free(); 
-            $db->close()
-
+            $db->close(); 
         ?>
 
 	</div>
