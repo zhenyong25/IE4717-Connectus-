@@ -30,31 +30,31 @@
     <div class="signup">Sign Up</div>
 
     <div class="signup-box">
-        <form action="signup.php" method="post">
+        <form action="./php/signup.php" method="POST">
                 <div class="form-header">Account Information</div>
                     <table class="account-info">
                         <tr>
                             <td class="table-left"><label class="form-content">E-mail Address *</label></td>
-                            <td><input id="email-address" class="form-input" type="text" onchange="email_address();" required></td>
+                            <td><input name="email_address" id="email-address" class="form-input" type="text" onchange="email_address();" required></td>
                         <tr>
                         <tr>
                             <td class="table-left"><label class="form-content">Password *</label></td>
-                            <td><input id="password" class="form-input" type="password" onchange="password();" required></td>
+                            <td><input name="password"id="password" class="form-input" type="password" onchange="password();" required></td>
                         </tr>
                         <tr>
                             <td class="table-left"><label class="form-content">Retype Password *</label></td>
-                            <td><input id="retype-password" class="form-input" type="password" onchange="retype_password();" required></td>
+                            <td><input name="retype_password" id="retype-password" class="form-input" type="password" onchange="retype_password();" required></td>
                         </tr>
                     </table>
                 <div class="form-header">Personal Information</div>
                     <table class="personal-info">
                         <tr>
                             <td class="table-left"><label class="form-content">Name *</label></td>
-                            <td><input id="name" class="form-input" type="text" onchange="name();" required></td>
+                            <td><input name="name" id="name" class="form-input" type="text" onchange="name();" required></td>
                         </tr>
                         <tr>
                             <td class="table-left"><label class="form-content">Contact Number *</label></td>
-                            <td><input id="contact-number" class="form-input" type="text" onchange="contact_number();" required></td>
+                            <td><input name="contact_number" id="contact-number" class="form-input" type="text" onchange="contact_number();" required></td>
                         </tr>
                     </table>
                         

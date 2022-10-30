@@ -49,13 +49,33 @@
         <div class="find-me">Find Pizza Near Me</div>
 
         <form action="./php/location.php" method="get">
-            <input class="search-location" type="text" id="textbox" size="40" placeholder="Search by Postal Code or Street Name" height="100px" name="location">
+            <input class="search-location" type="text" id="textbox" size="40" placeholder="Search by Postal Code or Street Name" height="100px">
             <input class="submit-search-location" type="submit" name="submit" value="Search" height="100px"> 
         </form>
 
-	    <!-- <h1>Jurong West<br>
-		Nanyang Drive Ave, 639798<br>
-		11am to 1130pm</h1> -->
+        <?php
+
+            $location = trim($_GET['location']); 
+
+            @$db = new mysqli ('localhost','root','','connectus')
+
+            if (mysqli_connect_errno()){
+                echo 'Error: Could not connect to database. Please try again later.'; 
+                exit; 
+            }
+
+            $query = "select address from locations where ".$location." = locations.location"; 
+            $results = $db->query($query); 
+
+            $location_address = $results-> num_rows; 
+
+            echo "<p>$location_address</p>"
+
+            $result->free(); 
+            $db->close()
+
+        ?>
+
 	</div>
 	<div class="map">
         <div class="view-map">View Map</div>>
