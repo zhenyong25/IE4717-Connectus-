@@ -64,18 +64,11 @@
                 exit;
             }
     
-<<<<<<< HEAD
             $query = "SELECT address FROM locations WHERE '$location'=locations.location"; 
             
             $results = $db->query($query); 
             $row = mysqli_fetch_array($results); 
             echo"<p class='location-address'>$row[0]</p>"; 
-=======
-            $query = "SELECT address FROM locations WHERE '$location'= 'locations.location'"; 
-            
-            $results = $db->query($query); 
-            echo "<p>$results</p>"; 
->>>>>>> 0ebcc10b7020ebe487800b38dbddced5c095227b
 
             $db->close(); 
         ?>
