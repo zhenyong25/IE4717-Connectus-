@@ -1,3 +1,31 @@
+<?php
+
+@$db = new mysqli ('localhost','root','','connectus'); 
+
+if(mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database. Please try again later.';
+    exit;
+}
+
+session_start(); 
+
+if (isset($_POST['email_address']) && isset($_POST['password']))
+{
+    $email_address = $_POST['email_address']; 
+    $password = $_POST['password']; 
+
+    $password = md5($password); 
+    $query = "select * from user where user.email_address='$email_address'and user.password='$password'"; 
+
+    $results = $db->query($query); 
+
+    if ($results->num_rows>0){
+        $_SESSION['valid_user'] = $email_address; 
+    }
+    $db->close(); 
+}
+?> 
+
 <!DOCTYPE html>
 
 <html>
@@ -7,7 +35,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/main.css">
-    <link rel="stylesheet" href="../CSS/locate.css">
     <script type="text/javascript" src="../JS/index.js"></script>
 </head>
 
@@ -20,71 +47,37 @@
             <li><a class="nav-bar-content" href="../menu.php">Menu</a></li> 
             <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
             <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
-            <li>
-                <a href="../login.html" id="login">
+            <li class="login-block">
+                <a href="login.html" id="login">
                     <img class="user-icon" src="../img/user-icon.png" height="20px" width="20px">
                 Login</a>
             </li>
         <div>
     </header>
 
-    <!-- side-navigation-bar -->
+<?php
+    if (isset($_SESSION['valid_user']))
+    {
+        echo 'You are logged in as: '.$_SESSION['valid_user'].'<br/>'; 
+        echo '<a href="./php/logout.php">Log out</a><br/>';
+    }
 
-<div class="flex-container">
-    <div class="locations">
-        <ul>
-            <li><a href="">Jurong East</a></li>
-            <li><a href="">Jurong West</a></li>
-            <li><a href="">Tampines</a></li>
-            <li><a href="">Changi</a></li>
-            <li><a href="">Redhill</a></li>
-            <li><a href="">Boon Lay</a></li>
-            <li><a href="">Joo Koon</a></li>
-            <li><a href="">Tanjong Pagar</a></li>
-            <li><a href="">Kranji</a></li>
-            <li><a href="">Holland Village</a></li>
-        </ul>
-    </div>
-    <div class="search-bar">
-        <div class="find-me">Find Pizza Near Me</div>
+    else{
+        if(isset($email_address))
+        {
+            echo 'Could not log you in.<br/>';
+        }
 
-        <form action="./php/location.php" method="post">
-            <input class="search-location" name="location" type="text" id="textbox" size="40" placeholder="Search by Postal Code or Street Name" height="100px">
-            <input class="submit-search-location" type="submit" name="submit" value="Search" height="100px"> 
-        </form>
-
-        <!-- php -->
-        <?php
-            $location = $_POST['location']; 
-
-            @$db = new mysqli ('localhost','root','','connectus'); 
-
-            if(mysqli_connect_errno()) {
-                echo 'Error: Could not connect to database. Please try again later.';
-                exit;
-            }
-    
-            $query = "SELECT address FROM locations WHERE '$location'= 'locations.location'"; 
-            
-            $results = $db->query($query); 
-            echo "<p>$results</p>"; 
-
-            $db->close(); 
-        ?>
-	</div>
-
-	<div class="map">
-        <div class="view-map">View Map</div>>
-	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7136383779975!2d103.68094601329543!3d1.3483098990166276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0f0a99014463%3A0xb8bb0800c52d8219!2sNanyang%20Technological%20University!5e0!3m2!1sen!2ssg!4v1665564415608!5m2!1sen!2ssg" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-</div>
-
-</div>
+        else{
+            echo 'You are not logged in.<br/>';
+        }
+    }
+?>
 
 <footer>
     <div class="footer">
         <div class="footer-div">
-            <img class="footer-logo" src="./img/connectus.png" width="140px" height="100px">
+            <img class="footer-logo" src="../img/connectus.png" width="140px" height="100px">
             <div class="footer-info">
                 <span class="footer-info-top">Connectus Pizza Singapore</span><br>
                 <span class="footer-info-bottom">6362 8890</span>
@@ -122,5 +115,7 @@
         </div>
     </div>
 </footer>
+
+</div>
 </body>
 </html>
