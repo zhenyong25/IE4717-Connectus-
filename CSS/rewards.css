@@ -73,8 +73,9 @@ img{
     font-size: medium; 
     font-weight: bold;
     display: block;
-    margin-bottom: 10px;
+    margin: 10px auto;
  }
+
 
  .voucher_code{
     display: block;
@@ -84,13 +85,12 @@ img{
  .tier_benefits{
     text-decoration: none;
     text-align: center;
-<<<<<<< HEAD
     background-color: white;
     color:#bba14f; 
     padding: 10px 10px; 
     border-radius: 10px;
-=======
-    background-color: yellow;
-    padding: 10px 20px; 
->>>>>>> 0ebcc10b7020ebe487800b38dbddced5c095227b
+ }
+
+ .points-progress{
+    font-weight: bold;
  }

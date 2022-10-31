@@ -1,7 +1,28 @@
+<?php
 
+@$db = new mysqli('localhost','root','','connectus'); 
+
+if(mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database. Please try again later.';
+    exit;
+}
+
+session_start(); 
+$user_id = $_SESSION['valid_user'];  
+if(empty($user_id))
+{
+   echo '<script>alert("Please log in before proceed!!!");</script>';
+   echo "<script>window.location.href='../login.html' </script>";
+}
+
+$voucher_code = $_POST('voucher_code'); 
+
+
+
+
+?>
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <title>Connectus</title>
@@ -42,27 +63,23 @@
 
     <!-- Points  -->
     <div class="points">
-        <span>706</span>
+        <span class="points-progress">0</span>
         <span>Connectus Points</span><br>
         <div class="progress-bar"></div>
-        <p>Get XXX more points by 31 Dec 2022 to maintain gold</p>
+        <p>Get <span class="points-progress">0</span> more points by 31 Dec 2022 to maintain gold</p>
         <div class="tier_benefits"><a  class="tier_benefits" href="">View Tier Benefits</a></div>
     </div>
-
-
 
     <div class="redeem-types">
         <a href="rewards.html" class="rewards">Redeem Points</a>
         <a href="rewards-voucher.html" class="rewards_vouchers">Redeem Vouchers</a>
     </div>
 
-    <div class="product_code">
-        <p class="product-code-header">Enter your product code here</p>
+    <p class="product-code-header">Enter your product code here</p>
         <form action="./php/voucher_code.php" method="post">
-            <input class="voucher_code" type="text" height="50px" width="100px">
-            <input class="redeem_voucher_code" type="submit" value="Redeem">
+            <input name="voucher_code" class="voucher_code" type="text" height="50px" width="100px">
+            <input name="redeem_voucher_code" class="redeem_voucher_code" type="submit" value="Redeem">
         </form>
-    </div>
 
     <div class="all-vouchers"> 
         <div class="pizza">

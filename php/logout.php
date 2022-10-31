@@ -35,18 +35,18 @@ session_destroy();
         <div>
     </header>
 
-    <h1>Log Out</h1>
+    <h1 class="log-out">Log Out</h1>
 
     <?php
     if (!empty($old_user)){
-        echo 'Logged out.<br />'; 
+        echo '<div class="log-out-msg">Thank you for using Connectus<br/>We hope to see you again</div>'; 
+        echo '<a class="login-fail-return" href="../index.html">Back to main page </a>'; 
     }
     else{
         echo 'You were not logged in, and so have not been logged out.<br />'; 
     }
     ?>
-    
-    <a href="../php/authmain.php">Back to main page </a>
+
 
     <footer>
     <div class="footer">

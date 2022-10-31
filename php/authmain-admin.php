@@ -46,24 +46,65 @@ if (isset($_POST['email_address']) && isset($_POST['password'])){
             <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
             <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
             <li class="login-block">
-                <a href="../login.html" id="login">
-                    <img class="user-icon" src="../img/user-icon.png" height="20px" width="20px">
-                Login</a>
+                <div class="dropdown">
+                <?php
+                echo "<a href='../login.html' id='login' class='dropbtn'>"; 
+                echo "<img class='user-icon' src='../img/user-icon.png' height='20px' width='20px'>
+                Admin</a>";
+                ?>
+                    <div class="dropdown-content">
+                        <a href="#">Edit Menu</a>
+                        <a href="#">Edit Price</a>
+                        <?php
+                        echo '<a href="logout.php">Log Out</a>';
+                        ?>
+                    </div>
+                </div>
             </li>
         <div>
     </header>
 
 
-<?php
+    <?php
     if (isset($_SESSION['valid_user'])){
-        echo 'You are logged in as: '.$_SESSION['valid_user'].'<br>'; 
-        echo "<a href='logout.php'>Log out</a>";
-    }
 
-    else{
-        if (isset($email_address))
+
+echo '<div>';
+echo '<img src="../img/main-pizza.jfif" width="100%" height="10%">';
+echo '</div>';
+
+echo '<div id="bottom-column">';
+echo '<div id="container">';
+echo '<img class="content-img" src="../img/italy.png">';
+echo '<p class="content-txt">Modern day Pizzas were invented in a city called Naples located in Italy. These delicious food were initially consumed by the poors in';
+echo 'the region of Naples. Long flatbread topped off with inexpensive garnishes such as tomato, cheese, oil, etc. These pizzas was sold by food vendors';
+echo 'which was meant to be eaten quickly and without fuss. Today Pizzas are found in all corner of the world.</p>';
+echo '<h1 class="content-intro">History</h1>';
+echo '</div>';
+       
+echo '<div id="container">';
+echo '<h1 class="content-intro">History of restuarant</h1>';
+echo '<p class="content-txt">Connectus is an American multinational restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. They serve their signature pan pizza and other dishes including pasta, breadsticks and dessert at dine-in, take-out and delivery chain locations. They also serve chicken wings on their WingStreet menu.';
+echo 'The chain headquartered in Plano, Texas</p>';
+echo '<img class="content-img" src="../img/pizza_restaurant.jfif">';
+echo '</div>';
+
+echo '<div id="container">';
+echo '<img class="content-img" src="../img/pizza_chef.jpg">';
+echo '<p class="content-txt">Our chefs, Chef Leonardo, have been trained in many italian restaurant all around the world. With 40 years of experience, he has been overlooking the process';
+echo 'of every single pizza coming out of our kitchen. From handpicking only the very fresh ingridents to temperature of the stove, Chef Leonardo is involved in every';
+echo 'step to ensure only the freshest and tasiest pizza comes to your table!</p>';
+echo '<h1 class="content-intro">Our Chefs</h1>';
+echo '</div>';
+echo '</div>';
+
+}
+
+else{
+    if (isset($email_address))
         {
-            echo 'Could not log you in'; 
+            echo '<p class="login-fail"> Could not log you in.<br>Please make sure you entered the correct email and password</p>'; 
+            echo '<a class="login-fail-return" href="../login.html">Back to Login Page</a>'; 
         }
         else
         {

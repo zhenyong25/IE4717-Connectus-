@@ -29,10 +29,9 @@
 
     <!-- Points  -->
     <div class="points">
-        <span>706</span>
+        <span class="points-progress">0</span>
         <span>Connectus Points</span><br>
-        <div class="progress-bar"></div>
-        <p>Get XXX more points by 31 Dec 2022 to maintain gold</p>
+        <p>Get <span class="points-progress">0</span> more points by 31 Dec 2022 to maintain gold</p>
         <div class="tier_benefits"><a  class="tier_benefits" href="">View Tier Benefits</a></div>
     </div>
 
@@ -42,18 +41,27 @@
     </div>
 
     <div class="all-vouchers"> 
-        <div class="pizza">
-            <img src="./img/voucher_regular_pizza.jpg">
-            <input class="redeem-button" type="submit" value="100 Points"> 
-        </div>
-        <div class="pizza">
-            <img src="./img/voucher_large_pizza.jpg">
-            <input class="redeem-button" type="submit" value="200 Points">
-        </div>
-        <div class="pizza">
-            <img src="./img/voucher_extra_large_pizza.jpg">
-            <input class="redeem-button" type="submit" value="300 Points"> 
-        </div>
+
+            <form action="php/rewards.php" method="post">
+                <div class="pizza">
+                    <img src="./img/voucher_regular_pizza.jpg">
+                    <input name="regular_pizza" class="redeem-button" type="submit" value="100 Points"> 
+                </div>
+            </form>
+
+            <form action="php/rewards.php" method="post">
+                <div class="pizza">
+                    <img src="./img/voucher_large_pizza.jpg">
+                    <input name="large_pizza" class="redeem-button" type="submit" value="200 Points">
+                </div>
+            </form>
+
+            <form action="php/rewards.php" method="post">
+                <div class="pizza">
+                    <img src="./img/voucher_extra_large_pizza.jpg">
+                    <input name="extra_large_pizza" class="redeem-button" type="submit" value="300 Points"> 
+                </div>
+            </form>
     </div>
 </body>
 
