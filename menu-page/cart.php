@@ -62,12 +62,10 @@ $db->close();
             <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
             <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
             <li class="login-block">
+				<a href="login.html" id="login">
+                    <img class="user-icon" src="../img/user-icon.png" height="20px" width="20px">
+                Login</a>
                 <div class="dropdown">
-                <?php
-                echo "<a href='../login.html' id='login' class='dropbtn'>"; 
-                echo "<img class='user-icon' src='../img/user-icon.png' height='20px' width='20px'>
-                $name_array[0]</a>";
-                ?>
                     <div class="dropdown-content">
                         <a href="../menu-page/cart.php">My Cart</a>
                         <a href="#">My Vouchers</a>

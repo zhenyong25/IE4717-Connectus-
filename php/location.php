@@ -68,14 +68,19 @@
             
             $results = $db->query($query); 
             $row = mysqli_fetch_array($results); 
-            echo"<p class='location-address'>$row[0]</p>"; 
+
+            if ($row[0] !=null){
+            echo"<p class='location-address'>$row[0]</p>";}
+
+            else{
+            echo"<p class='location-address'>No location found</p>";}
 
             $db->close(); 
         ?>
 	</div>
 
 	<div class="map">
-        <div class="view-map">View Map</div>>
+        <div class="view-map">View Map</div>
 	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7136383779975!2d103.68094601329543!3d1.3483098990166276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0f0a99014463%3A0xb8bb0800c52d8219!2sNanyang%20Technological%20University!5e0!3m2!1sen!2ssg!4v1665564415608!5m2!1sen!2ssg" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </div>

@@ -62,56 +62,11 @@ $db->close();
             </li>
         <div>
 </header>
-<body>
-<h1 class="shopping">Your Shopping Cart </h1>
-		<?php
-		$items = array(
-			'Pepperoni Pizza',
-			'Mushroom Pizza',
-			'French Fries',
-			'Coleslaw',
-			'Cola',
-			'Green Tea'
-			);
-		$prices = array($peperroni_pizza_price, $mushroom_pizza_price, $french_fries_price, $coleslaw_price,$cola_price,$green_tea_price);
-		?>
-<table border="1">
-	<thead>
-	<tr>
-		<th>Item</th>
-		<th>Item Description</th>
-		<th>Price</th>
-		
-	</tr>
-	</thead>
-	<tbody>
-	<form id="order-form" action="./order-successful.php" method="POST">
-<?php
-$total = 0;
-for ($i=0; $i < count($_SESSION['cart']); $i++){
-	$j = $i + 1;
-	echo "<tr>";
-	echo "<td align='center'>$j</td>";
-	echo "<td align='center'>" .$items[$_SESSION['cart'][$i]]. "</td>";
-	echo "<td align='center'>$";
-	echo number_format($prices[$_SESSION['cart'][$i]], 2). "</td>";
-	echo "</tr>";
-	$total = $total + $prices[$_SESSION['cart'][$i]];
-}
-?>
-	</tbody>
-	<tfoot>
-	<tr>
-	
-		<th align ='right'></th>
-		<th align='right'>Total:</th><br>
-		<th align='center'>$<?php echo number_format($total, 2); ?>
-		</th>
-	</tr>
-	</tfoot>
-</table>
 
-	    <table border="0" style = "width:40%">
+<h1 class="shopping">Payment Details</h1>	
+
+<form action="order-successful.php" method="POST">
+<table border="0" style = "width:40%">
       <tr>
         <td>Name</td>
          <td><input type="text" name="name" id="name" maxlength="13" size="15" onchange="validateName()"></td>
@@ -128,7 +83,7 @@ for ($i=0; $i < count($_SESSION['cart']); $i++){
         <td>CVV</td>
         <td> <input type="text" name="cvv" id="cvv" maxlength="60" size="15" onchange="validatecreditcard()"></td>
       </tr>
-    </table>
+</table>
 	
 <?php
 $db = new mysqli('localhost', 'root', '', 'connectus');
@@ -203,12 +158,12 @@ if ($db->connect_errno) {
 	}
 	  $db->close();
 ?>
-	
-<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Cancel Order</a> or
-<!--<a href="./order-successful.php"><button type='submit' name='submit' onclick="myfunction()" id='submit'>Submit Order</button></a> -->
 
-<input type='submit' name='submit'> 
-</p>
+<div class="next-step">
+	<a class="next-step-content" href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Cancel Order</a> or
+	<!--<a href="./order-successful.php"><button type='submit' name='submit' onclick="myfunction()" id='submit'>Submit Order</button></a> -->
+	<input class="next-step-content" type='submit' name='submit'></p>
+</div>
 </form>
 </body>
 </html>

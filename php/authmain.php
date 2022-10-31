@@ -60,7 +60,7 @@ if (isset($_POST['email_address']) && isset($_POST['password'])){
                 ?>
                     <div class="dropdown-content">
                         <a href="../menu-page/cart.php">My Cart</a>
-                        <a href="../view_vouchers.html">My Vouchers</a>
+                        <a href="../view-vouchers.html">My Vouchers</a>
                         <a href="../order.html">My Orders</a>
                         <?php
                         echo '<a href="logout.php">Log Out</a>';
