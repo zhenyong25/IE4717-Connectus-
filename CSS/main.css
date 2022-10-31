@@ -262,6 +262,77 @@ th, td{
 	padding-top: 30px;
 }
 
+.menu-header{
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.3rem;
+	font-weight: bold;
+	margin-left: 80px;
+}
+
+.add_button {
+	text-decoration: none;
+	color: white;
+	background-color: #0094FF;
+	padding: 10px 35px; 
+	margin-top: 10px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: 10px;
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+ .price{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 0.8rem;
+	padding: 3px 0px;  
+	margin-top: 0px;
+	font-weight: 500;
+ }
+
+ .menu-item{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.0rem; 
+	margin-bottom: 0px;
+ }
+
+ img{
+	border-radius: 10px;
+ }
+
+ .main-menu-header{
+	display: flex;
+ }
+ 
+ .cart{
+	margin-left: 60%; 
+	vertical-align: middle;
+	padding: 5px;
+	margin-top: 15px; 
+	margin-bottom: 10px;
+	text-decoration: none;
+ }
+
+ .view-cart{
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+ }
+
+ .cart-items {
+	vertical-align: middle;
+	padding: 10px;
+	margin: 10px;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #0094FF;
+	color: white;
+	border-radius: 10px;
+ }
+
+ .connectus{
+	z-index: 1;
+	color:white;
+ }
 
 
 

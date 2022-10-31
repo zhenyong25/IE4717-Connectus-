@@ -14,12 +14,18 @@ if (isset($_GET['empty'])) {
 	header('location: ' . $_SERVER['PHP_SELF']);
 	exit();
 }
-$db = new mysqli('localhost', 'root', '', 'connectus_1');
+
+$db = new mysqli('localhost', 'root', '', 'connectus');
 
 // Check connection
 if ($db->connect_errno) {
 	echo 'Error: Could not connect to database. Please try again later.';
 	exit();
+
+	$query_name = "select name from user where email_address='valid_user' and password='valid_password"; 
+    $name_result = $db->query($query_name); 
+    $name_array = mysqli_fetch_array($name_result);
+
 }
 
 // Get the latest prices
@@ -36,45 +42,47 @@ $db->close();
 ?>
 <html>
 <head>
-    <title><img src="./img/connectus.png">Connectus</title>
+    <title>Connectus</title>
+	<link rel="icon" type="image/x-icon" href="./img/favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/main.css">
-	<style>table{margin: 0px; border:0px solid #000066; width:80%; margin-left: auto;
+	<link rel="stylesheet" href="../CSS/cart.css">
+	<style>table{margin: 0px; width:80%; margin-left: auto;
   margin-right: auto;}
 	td{padding: 20px;}</style>
     <script type="text/javascript" src="../JS/index.js"></script>
 </head>
- <!-- Navigation Bar -->
-    <nav class="nav-bar">
-		<!-- <ul class="nav">  -->
-            <span>
-                <img class ="nav-bar-logo" src="../img/connectus.png" height="100px" width="150px">
-            </span>
-            <span class="nav-content">
-                <li><a class="nav-bar-content" href="../index.html">Home</a></li> 
-                <li><a class="nav-bar-content" href="../menu.php">Menu</a></li> 
-                <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
-                <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
-            <span>
-		<!-- <ul> -->
-    </nav>
-
-
-    <!-- Login -->
-    <div id ='login-button'>
-        <img src=""> 
-        <span id="login">Login</span>
-    </div>
-
-    <!-- Order Now  -->
-    <div id ='order-now-button'>
-        <img src="">
-        <span id="order-now">Order Now</span>
-	</div>
+<header>
+        <!-- Navigation Bar -->
+        <div class="nav-content">
+            <li><img class ="nav-bar-logo" src="../img/connectus.png" height="100px" width="150px" href="index.html"></li>
+            <li><a class="nav-bar-content" href="../index.html">Home</a></li> 
+            <li><a class="nav-bar-content" href="../menu.php">Menu</a></li> 
+            <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
+            <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
+            <li class="login-block">
+                <div class="dropdown">
+                <?php
+                echo "<a href='../login.html' id='login' class='dropbtn'>"; 
+                echo "<img class='user-icon' src='../img/user-icon.png' height='20px' width='20px'>
+                $name_array[0]</a>";
+                ?>
+                    <div class="dropdown-content">
+                        <a href="../menu-page/cart.php">My Cart</a>
+                        <a href="#">My Vouchers</a>
+                        <a href="#">My History</a>
+                        <?php
+                        echo '<a href="logout.php">Log Out</a>';
+                        ?>
+                    </div>
+                </div>
+            </li>
+        <div>
 </header>
+
 <body>
-<h1>Your Shopping Cart </h1>
+<h1 class="shopping">Your Shopping Cart </h1>
 		<?php
 		$items = array(
 			'Pepperoni Pizza',
@@ -86,7 +94,7 @@ $db->close();
 			);
 		$prices = array($peperroni_pizza_price, $mushroom_pizza_price, $french_fries_price, $coleslaw_price,$cola_price,$green_tea_price);
 		?>
-<table border="1">
+<table>
 	<thead>
 	<tr>
 		<th>Item</th>
@@ -96,7 +104,8 @@ $db->close();
 	</tr>
 	</thead>
 	<tbody>
-	<form id="order-form" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+
+<form id="order-form" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 <?php
 $total = 0;
 for ($i=0; $i < count($_SESSION['cart']); $i++){
@@ -113,18 +122,18 @@ for ($i=0; $i < count($_SESSION['cart']); $i++){
 	</tbody>
 	<tfoot>
 	<tr>
-	
 		<th align ='right'></th>
-		<th align='right'>Total:</th><br>
+		<th align='right'>Total</th><br>
 		<th align='center'>$<?php echo number_format($total, 2); ?>
 		</th>
 	</tr>
 	</tfoot>
 </table>
-<p><a href="../menu.php">Continue Shopping</a> or
-<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Empty your cart</a> or
-<a href="./payment.php">Order Now</a>
-</p>
+	<div class="next-step">
+		<a class="next-step-content" href="../menu.php">Continue Shopping</a> or
+		<a class="next-step-content" href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Empty Your Cart</a> or
+		<a class="next-step-content" href="./payment.php">Order Now</a>
+	</div>
 </form>
 </body>
 </html>

@@ -40,7 +40,7 @@ session_destroy();
     <?php
     if (!empty($old_user)){
         echo '<div class="log-out-msg">Thank you for using Connectus<br/>We hope to see you again</div>'; 
-        echo '<a class="login-fail-return" href="../index.html">Back to main page </a>'; 
+        echo '<a class="login-fail-return" href="../index.html">Back to Main Page </a>'; 
     }
     else{
         echo 'You were not logged in, and so have not been logged out.<br />'; 

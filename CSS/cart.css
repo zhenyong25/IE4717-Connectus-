@@ -1,0 +1,73 @@
+.shopping{
+    color:#0094FF; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+}
+
+table{
+    background-color: #0094FF;
+    color: white;
+    border: 0px;
+    border-color: none;
+}
+
+tr{
+    font-size: medium;
+}
+
+thead{
+    background-color: white; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+
+tfoot{
+    background-color: white; 
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.next-step{
+    padding: 20px 40px;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+}
+
+.next-step-content{
+    padding: 0 20px; 
+}
+
+.booking-summary{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+}
+
+.booking-summary-content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+  }
+
+.view-my-order{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.back-to-home{
+    margin: 40px auto; 
+    justify-content: center;
+    margin-left: 43%;
+}
+
+.back-to-home-content{
+    padding: 10px 40px;
+    background-color: #0094FF;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif; 
+    border-radius: 10px;
+}

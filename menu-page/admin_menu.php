@@ -51,18 +51,17 @@ if ($db->connect_errno) {
 </head>
 
 <body>
-<header>
-    <header>
+	<header>
         <!-- Navigation Bar -->
         <div class="nav-content">
-            <li><img class ="nav-bar-logo" src="../img/connectus.png" height="100px" width="150px" href="index.html"></li>
-            <li><a class="nav-bar-content" href="../index.html">Home</a></li> 
-            <li><a class="nav-bar-content" href="../menu.php">Menu</a></li> 
-            <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
-            <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
-            <li class="login-block">
+            <li><img class ="nav-bar-logo" src="./img/connectus.png" height="100px" width="150px" href="index.html"></li>
+            <li><a class="nav-bar-content" href="index.html">Home</a></li> 
+            <li><a class="nav-bar-content" href="menu.php">Menu</a></li> 
+            <li><a class="nav-bar-content" href="./php/rewards_voucher.php">Rewards</a></li>
+            <li><a class="nav-bar-content" href="locate.html">Locate Us</a></li>
+            <li>
                 <a href="login.html" id="login">
-                    <img class="user-icon" src="../img/user-icon.png" height="20px" width="20px">
+                    <img class="user-icon" src="./img/user-icon.png" height="20px" width="20px">
                 Login</a>
             </li>
         <div>

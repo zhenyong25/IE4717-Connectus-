@@ -14,7 +14,7 @@ if (isset($_GET['empty'])) {
 	header('location: ' . $_SERVER['PHP_SELF']);
 	exit();
 }
-$db = new mysqli('localhost', 'root', '', 'connectus_1');
+$db = new mysqli('localhost', 'root', '', 'connectus');
 
 // Check connection
 if ($db->connect_errno) {
@@ -36,45 +36,34 @@ $db->close();
 ?>
 <html>
 <head>
-    <title><img src="./img/connectus.png">Connectus</title>
+    <title>Connectus</title>
+	<link rel="icon" type="image/x-icon" href="./img/favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/main.css">
+	<link rel="stylesheet" href="../CSS/cart.css">
 	<style>table{margin: 0px; border:0px solid #000066; width:80%; margin-left: auto;
   margin-right: auto;}
 	td{padding: 20px;}</style>
     <script type="text/javascript" src="./checkform.js"></script>
 </head>
- <!-- Navigation Bar -->
-    <nav class="nav-bar">
-		<!-- <ul class="nav">  -->
-            <span>
-                <img class ="nav-bar-logo" src="../img/connectus.png" height="100px" width="150px">
-            </span>
-            <span class="nav-content">
-                <li><a class="nav-bar-content" href="../index.html">Home</a></li> 
-                <li><a class="nav-bar-content" href="../menu.php">Menu</a></li> 
-                <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
-                <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
-            <span>
-		<!-- <ul> -->
-    </nav>
-
-
-    <!-- Login -->
-    <div id ='login-button'>
-        <img src=""> 
-        <span id="login">Login</span>
-    </div>
-
-    <!-- Order Now  -->
-    <div id ='order-now-button'>
-        <img src="">
-        <span id="order-now">Order Now</span>
-	</div>
+<header>
+        <!-- Navigation Bar -->
+        <div class="nav-content">
+            <li><img class ="nav-bar-logo" src="../img/connectus.png" height="100px" width="150px" href="index.html"></li>
+            <li><a class="nav-bar-content" href="../index.html">Home</a></li> 
+            <li><a class="nav-bar-content" href="../menu.php">Menu</a></li> 
+            <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
+            <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
+            <li class="login-block">
+                <a href="login.html" id="login">
+                    <img class="user-icon" src="../img/user-icon.png" height="20px" width="20px">
+                Login</a>
+            </li>
+        <div>
 </header>
 <body>
-<h1>Your Shopping Cart </h1>
+<h1 class="shopping">Your Shopping Cart </h1>
 		<?php
 		$items = array(
 			'Pepperoni Pizza',
@@ -142,7 +131,7 @@ for ($i=0; $i < count($_SESSION['cart']); $i++){
     </table>
 	
 <?php
-$db = new mysqli('localhost', 'root', '', 'connectus_1');
+$db = new mysqli('localhost', 'root', '', 'connectus');
 
 // Check connection
 if ($db->connect_errno) {
@@ -215,7 +204,7 @@ if ($db->connect_errno) {
 	  $db->close();
 ?>
 	
-<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Cancel order</a> or
+<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Cancel Order</a> or
 <!--<a href="./order-successful.php"><button type='submit' name='submit' onclick="myfunction()" id='submit'>Submit Order</button></a> -->
 
 <input type='submit' name='submit'> 

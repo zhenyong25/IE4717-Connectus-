@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="./CSS/signup.css">
-    <script type="text/javascript" src="./JS/index.js"></script>
+    <script type="text/javascript" src="./JS/login.js"></script>
     <style>
         .form-content{
             font-size: larger;
@@ -41,15 +41,15 @@
                     <table class="account-info">
                         <tr>
                             <td class="table-left"><label class="form-content">E-mail Address *</label></td>
-                            <td><input name="email_address" id="email-address" class="form-input" type="text" onchange="email_address();" required></td>
+                            <td><input name="email_address" id="account-email" class="form-input" type="text" onchange="validateEmail();" required></td>
                         <tr>
                         <tr>
                             <td class="table-left"><label class="form-content">Password *</label></td>
-                            <td><input name="password" id="password" class="form-input" type="password" onchange="password();" required></td>
+                            <td><input name="password" id="account-password" class="form-input" type="password" onchange="validatePassword();" required></td>
                         </tr>
                         <tr>
                             <td class="table-left"><label class="form-content">Retype Password *</label></td>
-                            <td><input name="retype_password" id="retype-password" class="form-input" type="password" onchange="retype_password();" required></td>
+                            <td><input name="retype_password" id="retype-password" class="form-input" type="password"  required></td>
                         </tr>
                     </table>
 
@@ -61,7 +61,7 @@
                         </tr>
                         <tr>
                             <td class="table-left"><label class="form-content">Contact Number *</label></td>
-                            <td><input name="contact_number" id="contact-number" class="form-input" type="text" onchange="contact_number();" required></td>
+                            <td><input name="contact_number" id="contact-number" class="form-input" type="text" onchange="validateContact();" required></td>
                         </tr>.
                     </table>
                         

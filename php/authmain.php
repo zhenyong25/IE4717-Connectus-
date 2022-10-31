@@ -19,6 +19,7 @@ if (isset($_POST['email_address']) && isset($_POST['password'])){
 
     if($result->num_rows>0){
         $_SESSION['valid_user'] = $email_address;
+        $_SESSION['valid_password'] =$password; 
     }
     
     $query_name = "select name from user where email_address='$email_address' and password='$password'"; 
@@ -58,9 +59,9 @@ if (isset($_POST['email_address']) && isset($_POST['password'])){
                 $name_array[0]</a>";
                 ?>
                     <div class="dropdown-content">
-                        <a href="#">My Cart</a>
-                        <a href="#">My Vouchers</a>
-                        <a href="#">My History</a>
+                        <a href="../menu-page/cart.php">My Cart</a>
+                        <a href="../view_vouchers.html">My Vouchers</a>
+                        <a href="../order.html">My Orders</a>
                         <?php
                         echo '<a href="logout.php">Log Out</a>';
                         ?>
