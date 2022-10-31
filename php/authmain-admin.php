@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 @$db = new mysqli ('localhost','root','','connectus'); 
@@ -119,3 +120,5 @@ if (isset($_POST['email_address']) && isset($_POST['password']))
 </div>
 </body>
 </html>
+=======
+>>>>>>> 94255273cdcc14857e54d55b6f710b2fa37a1334
