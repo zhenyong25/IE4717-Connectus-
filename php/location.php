@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Connectus</title>
-    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/main.css">
@@ -64,10 +64,18 @@
                 exit;
             }
     
+<<<<<<< HEAD
+            $query = "SELECT address FROM locations WHERE '$location'=locations.location"; 
+            
+            $results = $db->query($query); 
+            $row = mysqli_fetch_array($results); 
+            echo"<p class='location-address'>$row[0]</p>"; 
+=======
             $query = "SELECT address FROM locations WHERE '$location'= 'locations.location'"; 
             
             $results = $db->query($query); 
             echo "<p>$results</p>"; 
+>>>>>>> 0ebcc10b7020ebe487800b38dbddced5c095227b
 
             $db->close(); 
         ?>
@@ -84,7 +92,7 @@
 <footer>
     <div class="footer">
         <div class="footer-div">
-            <img class="footer-logo" src="./img/connectus.png" width="140px" height="100px">
+            <img class="footer-logo" src="../img/connectus.png" width="140px" height="100px">
             <div class="footer-info">
                 <span class="footer-info-top">Connectus Pizza Singapore</span><br>
                 <span class="footer-info-bottom">6362 8890</span>
