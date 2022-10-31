@@ -1,0 +1,9 @@
+.logoutbutton{
+    text-decoration: none;
+    text-align: center;
+}
+
+.logout{
+    display: block;
+    margin: auto;
+}

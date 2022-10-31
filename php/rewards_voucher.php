@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html>
@@ -43,9 +45,11 @@
         <span>706</span>
         <span>Connectus Points</span><br>
         <div class="progress-bar"></div>
-        <p>Get 294 more points by 31 Dec 2022 to maintain gold</p>
+        <p>Get XXX more points by 31 Dec 2022 to maintain gold</p>
         <div class="tier_benefits"><a  class="tier_benefits" href="">View Tier Benefits</a></div>
     </div>
+
+
 
     <div class="redeem-types">
         <a href="rewards.html" class="rewards">Redeem Points</a>

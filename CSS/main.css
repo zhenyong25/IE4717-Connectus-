@@ -168,6 +168,24 @@ th, td{
 	width: 100%;
 }
 
+.successful {
+	width: 400px;
+	height: 300px; 
+	text-align: center;
+	vertical-align: middle;
+	margin: auto;
+	padding-top: 100px;
+	display: flex;
+	justify-content: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
 
 
 

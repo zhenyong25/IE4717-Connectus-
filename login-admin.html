@@ -47,19 +47,14 @@
     </div>
 
     <div class="login-box">
-        <form action="admin-login.php" method="post">
+        <form action="./php/authmain-admin.php" method="post">
                 <label class="form-content">E-mail Address</label><br>
-                <input class="form-input" id="account-email" type="text" onchange="validateEmail();" placeholder="Email Address" required><br>
+                <input name="email_address" class="form-input" id="account-email" type="text" onchange="validateEmail();" placeholder="Email Address" required><br>
                 <label class="form-content">Password</label><br>
-                <input class="form-input" id ="account-password" type="text" onchange="validatePassword();" placeholder="Password" required>
+                <input name="password" class="form-input" id ="account-password" type="password" onchange="validatePassword();" placeholder="Password" required>
             <div class="reset-link"><a href="reset.html">Forget your password?</a></div>
             <input class="sign-in-button" type="submit" value="Sign In">
         </form>
-
-        <div class="no-account">
-            <span>Don't have an account?</span>
-            <span><a href="signup.html">Sign Up Now</a></span>
-        </div>
     </div>
 </body>
 

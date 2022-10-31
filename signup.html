@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="./CSS/signup.css">
     <script type="text/javascript" src="./JS/index.js"></script>
+    <style>
+        .form-content{
+            font-size: larger;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,7 +35,8 @@
     <div class="signup">Sign Up</div>
 
     <div class="signup-box">
-        <form action="./php/signup.php" method="POST">
+        <form action="php/signup.php" method="post">
+            
                 <div class="form-header">Account Information</div>
                     <table class="account-info">
                         <tr>
@@ -39,13 +45,14 @@
                         <tr>
                         <tr>
                             <td class="table-left"><label class="form-content">Password *</label></td>
-                            <td><input name="password"id="password" class="form-input" type="password" onchange="password();" required></td>
+                            <td><input name="password" id="password" class="form-input" type="password" onchange="password();" required></td>
                         </tr>
                         <tr>
                             <td class="table-left"><label class="form-content">Retype Password *</label></td>
                             <td><input name="retype_password" id="retype-password" class="form-input" type="password" onchange="retype_password();" required></td>
                         </tr>
                     </table>
+
                 <div class="form-header">Personal Information</div>
                     <table class="personal-info">
                         <tr>
@@ -55,7 +62,7 @@
                         <tr>
                             <td class="table-left"><label class="form-content">Contact Number *</label></td>
                             <td><input name="contact_number" id="contact-number" class="form-input" type="text" onchange="contact_number();" required></td>
-                        </tr>
+                        </tr>.
                     </table>
                         
                     <div class="checkbox-click">

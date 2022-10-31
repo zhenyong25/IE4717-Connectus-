@@ -1,3 +1,35 @@
+<?php
+
+@$db = new mysqli ('localhost','root','','connectus'); 
+
+if(mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database. Please try again later.';
+    exit;
+}
+
+session_start(); 
+
+if (isset($_POST['email_address']) && isset($_POST['password']))
+{
+    $email_address = $_POST['email_address']; 
+    $password = $_POST['password']; 
+
+    $password = md5($password); 
+    $query = "select * from user where user.email_address='$email_address'and user.password='$password'"; 
+
+    $results = $db->query($query); 
+
+    if ($results->num_rows>0){
+        $_SESSION['valid_user'] = $email_address; 
+    }
+
+    $query_name = "select name from user where user.email_address='$email_address'and user.password='$password'";
+    $name = $db->query($query_name);
+    $array_name = mysqli_fetch_array($name); 
+
+    $db->close(); 
+}
+?> 
 
 <!DOCTYPE html>
 
@@ -21,49 +53,32 @@
             <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
             <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
             <li class="login-block">
-                <a href="login.html" id="login">
-                    <img class="user-icon" src="../img/user-icon.png" height="20px" width="20px">
-                Login</a>
+                <?php
+                echo "<a href='../login.html' id='login'>";
+                echo "<img class='user-icon' src='../img/user-icon.png' height='20px' width='20px'>$array_name[0]</a>";
+                ?>
             </li>
         <div>
     </header>
 
-
 <?php
+    if (isset($_SESSION['valid_user']))
+    {
+        echo 'You are logged in as: '.$_SESSION['valid_user'].'<br/>'; 
+        echo '<a href="logout.php">Log out</a><br/>';
+    }
 
- @$db = new mysqli ('localhost','root','','connectus'); 
+    else{
+        if(isset($email_address))
+        {
+            echo 'Could not log you in.<br/>';
+        }
 
-if(mysqli_connect_errno()) {
-    echo 'Error: Could not connect to database. Please try again later.';
-    exit;
-}
-
-$email_address = $_POST['email_address'];
-$password = $_POST['password'];
-$retype_password = $_POST['retype_password'];
-$name = $_POST['name'];
-$contact_number = $_POST['contact_number'];
-
-if ($password != $retype_password){
-    echo "Sorry passwords do not match"; 
-    exit;  
-}
-
-$password = md5($password); 
-
-$sql= "INSERT into user(email_address,password,retype_password,name,contact) VALUES ('$email_address','$password','$retype_password','$name','$contact_number')"; 
-
-$result = $db->query($sql); 
-
-if (!$result)
-    echo "Your query failed.";
-else
-    // echo "<img src='../img/pizza_signup.png'>";
-    echo "<div class='successful'> Welcome ".$name.".</br>You are now registered</div>";
-
-$db->close();
-
-?> 
+        else{
+            echo 'You are not logged in.<br/>';
+        }
+    }
+?>
 
 <footer>
     <div class="footer">
