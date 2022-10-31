@@ -36,43 +36,35 @@ $db->close();
 ?>
 <html>
 <head>
-    <title><img src="./img/connectus.png">Connectus</title>
+    <title>Connectus</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/main.css">
+
 	<style>table{margin: 0px; border:0px solid #000066; width:80%; margin-left: auto;
   margin-right: auto;}
 	td{padding: 20px;}</style>
-    <script type="text/javascript" src="./checkform.js"></script>
+    <script type="text/javascript" src="./JS/index.js"></script>
 </head>
- <!-- Navigation Bar -->
-    <nav class="nav-bar">
-		<!-- <ul class="nav">  -->
-            <span>
-                <img class ="nav-bar-logo" src="../img/connectus.png" height="100px" width="150px">
-            </span>
-            <span class="nav-content">
-                <li><a class="nav-bar-content" href="../index.html">Home</a></li> 
-                <li><a class="nav-bar-content" href="../menu.php">Menu</a></li> 
-                <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
-                <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
-            <span>
-		<!-- <ul> -->
-    </nav>
 
-
-    <!-- Login -->
-    <div id ='login-button'>
-        <img src=""> 
-        <span id="login">Login</span>
-    </div>
-
-    <!-- Order Now  -->
-    <div id ='order-now-button'>
-        <img src="">
-        <span id="order-now">Order Now</span>
-	</div>
-</header>
+<body>
+<header>
+    <header>
+        <!-- Navigation Bar -->
+        <div class="nav-content">
+            <li><img class ="nav-bar-logo" src="../img/connectus.png" height="100px" width="150px" href="index.html"></li>
+            <li><a class="nav-bar-content" href="../index.html">Home</a></li> 
+            <li><a class="nav-bar-content" href="../menu.php">Menu</a></li> 
+            <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
+            <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
+            <li class="login-block">
+                <a href="login.html" id="login">
+                    <img class="user-icon" src="../img/user-icon.png" height="20px" width="20px">
+                Login</a>
+            </li>
+        <div>
+    </header>
 <body>
 <h1>Your Shopping Cart </h1>
 		<?php
@@ -96,7 +88,7 @@ $db->close();
 	</tr>
 	</thead>
 	<tbody>
-	<form id="order-form" action="./order-successful.php" method="POST">
+	<form id="order-form" action="" method="POST">
 <?php
 $total = 0;
 for ($i=0; $i < count($_SESSION['cart']); $i++){
@@ -121,7 +113,7 @@ for ($i=0; $i < count($_SESSION['cart']); $i++){
 	</tr>
 	</tfoot>
 </table>
-
+		
 	    <table border="0" style = "width:40%">
       <tr>
         <td>Name</td>
@@ -200,7 +192,7 @@ if ($db->connect_errno) {
 		//$id = $db->query($query_3)->insert_id;
 		$id = mysqli_insert_id($db);
 		$to      = 'f32ee@localhost';
-		$subject = 'Sucessful order from Connect us';
+		$subject = 'Sucessful order from Connectus';
 		$message = "Good day, Your order is sucessful! Booking reference is {$id}.Your food will arrive in 20-30 minutes. Thank you for the continued support!" ;
 		$headers = 'From: f32ee@localhost' . "\r\n" .
 		'Reply-To: f32ee@localhost' . "\r\n" .
@@ -214,11 +206,12 @@ if ($db->connect_errno) {
 	}
 	  $db->close();
 ?>
-	
+<p style="text-align:center">
 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Cancel order</a> or
-<!--<a href="./order-successful.php"><button type='submit' name='submit' onclick="myfunction()" id='submit'>Submit Order</button></a> -->
+<!--<a href="./order-successful.php"><button type='submit' name='submit' onclick="myfunction()" id='submit'>Submit Order</button></a>-->
+<input type ="submit" name ='submit' value = "Submit Order" onClick="alert('An confirmation email has been sent to your account. Your pizza will be ready in 20-30 minutes. Please check and Thank You for the support')" >
 
-<input type='submit' name='submit'> 
+<!--<input type='submit' name='submit'> -->
 </p>
 </form>
 </body>

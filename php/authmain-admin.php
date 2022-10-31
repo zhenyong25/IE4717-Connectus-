@@ -46,6 +46,7 @@ if (isset($_POST['email_address']) && isset($_POST['password']))
             <li><a class="nav-bar-content" href="../menu.php">Menu</a></li> 
             <li><a class="nav-bar-content" href="../rewards.html">Rewards</a></li>
             <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
+			<li><a class="nav-bar-content" href="./menu-page/admin_menu.php">Admin Page</a></li>
             <li class="login-block">
                 <a href="login.html" id="login">
                     <img class="user-icon" src="../img/user-icon.png" height="20px" width="20px">
