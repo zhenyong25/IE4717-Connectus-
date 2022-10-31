@@ -6,6 +6,7 @@ unset($_SESSION['valid_user']);
 session_destroy(); 
 ?>
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html>
@@ -38,10 +39,18 @@ session_destroy();
     <h1>Log Out</h1>
 
     <?php
+=======
+<html>
+<body>
+<h1>Log Out</h1>
+
+<?php
+>>>>>>> 0ebcc10b7020ebe487800b38dbddced5c095227b
     if (!empty($old_user)){
         echo 'Logged out.<br />'; 
     }
     else{
+<<<<<<< HEAD
         echo 'You were not logged in, and so have not been logged out.<br />'; 
     }
     ?>
@@ -93,3 +102,11 @@ session_destroy();
 </div>
 </body>
 </html>
+=======
+        echo 'You were not logged in, and so have not been logged out.<br />'
+    }
+?>
+<a href="./php/authmainphp">Back to main page </a>  
+</body> 
+</html> 
+>>>>>>> 0ebcc10b7020ebe487800b38dbddced5c095227b
