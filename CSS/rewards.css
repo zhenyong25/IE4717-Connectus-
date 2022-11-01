@@ -94,3 +94,14 @@ img{
  .points-progress{
     font-weight: bold;
  }
+
+ .expiry-date{
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+ .expiry-date-content{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+ }

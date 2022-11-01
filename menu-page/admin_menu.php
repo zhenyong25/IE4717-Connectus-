@@ -1,6 +1,6 @@
 <?php //catalog.php
 
-$db = new mysqli('localhost', 'root', '', 'connectus_1');
+$db = new mysqli('localhost', 'root', '', 'connectus');
 
 // Check connection
 if ($db->connect_errno) {
@@ -42,7 +42,8 @@ if ($db->connect_errno) {
 
 <html>
 <head>
-    <title><img src="./img/connectus.png">Connectus</title>
+    <title>Connectus</title>
+	<link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/main.css">
@@ -54,14 +55,14 @@ if ($db->connect_errno) {
 	<header>
         <!-- Navigation Bar -->
         <div class="nav-content">
-            <li><img class ="nav-bar-logo" src="./img/connectus.png" height="100px" width="150px" href="index.html"></li>
-            <li><a class="nav-bar-content" href="index.html">Home</a></li> 
-            <li><a class="nav-bar-content" href="menu.php">Menu</a></li> 
-            <li><a class="nav-bar-content" href="./php/rewards_voucher.php">Rewards</a></li>
-            <li><a class="nav-bar-content" href="locate.html">Locate Us</a></li>
+            <li><img class ="nav-bar-logo" src="../img/connectus.png" height="100px" width="150px" href="index.html"></li>
+            <li><a class="nav-bar-content" href="../index.html">Home</a></li> 
+            <li><a class="nav-bar-content" href="../menu.php">Menu</a></li> 
+            <li><a class="nav-bar-content" href="../php/rewards_voucher.php">Rewards</a></li>
+            <li><a class="nav-bar-content" href="../locate.html">Locate Us</a></li>
             <li>
-                <a href="login.html" id="login">
-                    <img class="user-icon" src="./img/user-icon.png" height="20px" width="20px">
+                <a href="../login.html" id="login">
+                    <img class="user-icon" src="../img/user-icon.png" height="20px" width="20px">
                 Login</a>
             </li>
         <div>
@@ -72,51 +73,51 @@ if ($db->connect_errno) {
 <div id="bottom-column">
 <form id="update-prices" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 <table border = "0">
-	<h2>Pizza</h2>
+	<h2 class="menu-header">Pizza</h2>
 	<tr>
 		<!--<th><strong>Pepperoni pizza</strong></th>-->
-		<th width ="100px"><img src="../img/pepperoni pizza.jpg" width="150" height="100" alt="pepperoni pizza"><!--https://unsplash.com/images/food/pizza-->
-		<p><strong>Pepperoni Pizza</strong></p>
-		<p><input type="text" name="peperroni_pizza" size=2 value="<?= $prices->peperroni_pizza ?>">
+		<th width ="100px"><img src="../img/pepperoni pizza.jpg" width="160px" height="160px" alt="pepperoni pizza"><!--https://unsplash.com/images/food/pizza-->
+		<div class='menu-item'><p><strong>Pepperoni Pizza</strong></p></div>
+		<p><input class="update-value" type="text" name="peperroni_pizza" size=2 value="<?= $prices->peperroni_pizza ?>">
 
-		<th width ="100px"><img src="../img/mushroom pizza.jpg" width="150" height="100" alt="mushroom pizza"><!--https://www.freepik.com/free-photos-vectors/pizza-top-view-->
-		<p><strong>Mushroom Pizza</strong></p>
-		<p><input type="text" name="mushroom_pizza" size=2 value="<?= $mushroom_pizza_price ?>">
+		<th width ="100px"><img src="../img/mushroom pizza.jpg" width="160px" height="160px" alt="mushroom pizza"><!--https://www.freepik.com/free-photos-vectors/pizza-top-view-->
+		<div class='menu-item'><p><strong>Mushroom Pizza</strong></p></div>
+		<p><input class="update-value" type="text" name="mushroom_pizza" size=2 value="<?= $mushroom_pizza_price ?>">
 		</p>
 	</tr>
 	</table>
 <table border = "0">
-	<h2>Side Dishes</h2>
+	<h2 class="menu-header">Side Dishes</h2>
 	<tr>
-		<th><img src="../img/french_fries.jpg" width="150" height="100" alt="french fries"><!--https://recipes.timesofindia.com/recipes/french-fries/rs54659021.cms-->
-		<p><strong>French Fries</strong></p>
-		<p><input type="text" name="french_fries" size=2 value="<?= $french_fries_price ?>">
+		<th><img src="../img/french_fries.jpg" width="160px" height="160px" alt="french fries"><!--https://recipes.timesofindia.com/recipes/french-fries/rs54659021.cms-->
+		<div class='menu-item'><p><strong>French Fries</strong></p></div>
+		<p><input class="update-value" type="text" name="french_fries" size=2 value="<?= $french_fries_price ?>">
 		</p>
 		
-		<th><img src="../img/coleslaw.jpg" width="150" height="100" alt="coleslaw"><!--https://www.inspiredtaste.net/26522/coleslaw-recipe/-->
-		<p><strong>Coleslaw</strong></p>
-		<p><input type="text" name="coleslaw" size=2 value="<?= $coleslaw_price ?>">
+		<th><img src="../img/coleslaw.jpg" width="160px" height="160px" alt="coleslaw"><!--https://www.inspiredtaste.net/26522/coleslaw-recipe/-->
+		<div class='menu-item'><p><strong>Coleslaw</strong></p></div>
+		<p><input class="update-value" type="text" name="coleslaw" size=2 value="<?= $coleslaw_price ?>">
 		</p>
 	</tr>
 	</table>
 	
 <table border = "0">
-	<h2>Beverages</h2>
+	<h2 class="menu-header">Beverages</h2>
 	<tr>
-		<th><img src="../img/coke_logo.png" width="150" height="100" alt="coke logo"><!--https://recipes.timesofindia.com/recipes/french-fries/rs54659021.cms-->
-		<p><strong>Coke</strong></p>
-		<p><input type="text" name="coke" size=2 value="<?= $coke_price ?>">
+		<th><img src="../img/coke_logo.png" width="160px" height="160px" alt="coke logo"><!--https://recipes.timesofindia.com/recipes/french-fries/rs54659021.cms-->
+		<div class='menu-item'><p><strong>Coke</strong></p></div>
+		<p><input class="update-value" type="text" name="coke" size=2 value="<?= $coke_price ?>">
 		</p>
-		<th><img src="../img/green_tea.jpg" width="150" height="100" alt="greentea"><!--https://www.pokka.co/our-products/product-detail?cat=tea&subcat=green-tea-->
-		<p><strong>Green Tea</strong></p>
-		<p><input type="text" name="green_tea" size=2 value="<?= $green_tea_price ?>">
+		<th><img src="../img/green_tea.jpg" width="160px" height="160px" alt="greentea"><!--https://www.pokka.co/our-products/product-detail?cat=tea&subcat=green-tea-->
+		<div class='menu-item'><p><strong>Green Tea</strong></p></div>
+		<p><input class="update-value" type="text" name="green_tea" size=2 value="<?= $green_tea_price ?>">
 		</p>
 		
 	</tr>
 	</table>
 	
 <table border = "0">
-<tr><br><th><button type='submit' name='submit' style="height:50px;width:100px">Update price</button></th></tr>
+<tr><br><th><button type='submit' name='submit' style="height:50px;width:100px">Update Price</button></th></tr>
 </table>
 </form>
 </div>

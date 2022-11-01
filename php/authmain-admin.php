@@ -54,7 +54,7 @@ if (isset($_POST['email_address']) && isset($_POST['password'])){
                 ?>
                     <div class="dropdown-content">
                         <a href="#">Edit Menu</a>
-                        <a href="#">Edit Price</a>
+                        <a href="../menu-page/admin_menu.php">Edit Price</a>
                         <?php
                         echo '<a href="logout.php">Log Out</a>';
                         ?>

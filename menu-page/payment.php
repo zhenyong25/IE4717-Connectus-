@@ -66,22 +66,22 @@ $db->close();
 <h1 class="shopping">Payment Details</h1>	
 
 <form action="order-successful.php" method="POST">
-<table border="0" style = "width:40%">
+<table class="payment-table" style = "width:40%">
       <tr>
         <td>Name</td>
-         <td><input type="text" name="name" id="name" maxlength="13" size="15" onchange="validateName()"></td>
+         <td><input type="text" class="payment-details" name="name" id="name" maxlength="13" size="15" onchange="validateName()" required></td>
       </tr>
 	  <tr>
         <td>Email</td>
-         <td><input type="text" name="email" id="email" maxlength="50" size="15" onchange="validateEmail()"></td>
+         <td><input type="text" class="payment-details" name="email" id="email" maxlength="50" size="15" onchange="validateEmail()" required></td>
       </tr>
       <tr>
         <td>Credit Card Number</td>
-        <td> <input type="text" name="credit_card_number" id="credit_card_number" maxlength="30" size="30" onchange="validatecreditcard()"></td>
+        <td> <input type="text" class="payment-details" name="credit_card_number" id="credit_card_number" maxlength="30" size="30" onchange="validatecreditcard()" required></td>
       </tr>
       <tr>
         <td>CVV</td>
-        <td> <input type="text" name="cvv" id="cvv" maxlength="60" size="15" onchange="validatecreditcard()"></td>
+        <td> <input type="text" class="payment-details" name="cvv" id="cvv" maxlength="60" size="15" onchange="validatecreditcard()" required></td>
       </tr>
 </table>
 	
@@ -160,9 +160,13 @@ if ($db->connect_errno) {
 ?>
 
 <div class="next-step">
-	<a class="next-step-content" href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Cancel Order</a> or
+	<div class="next-step-content">
+		<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Cancel Order</a>
+	</div> 
 	<!--<a href="./order-successful.php"><button type='submit' name='submit' onclick="myfunction()" id='submit'>Submit Order</button></a> -->
-	<input class="next-step-content" type='submit' name='submit'></p>
+	<div class="next-step-content">
+		<input class="next-step-content" type='submit' value="Proceed Payment"></p>
+	</div> 
 </div>
 </form>
 </body>
