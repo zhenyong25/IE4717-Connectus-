@@ -4,20 +4,20 @@ The objective of this project is to design a web application for pizza order del
 
 # Progress Update (Deadline: 11th November 2022)
 
-# Main Page (Zhen Yong)
-1. Home Page (index.html) - 80% Completion 
-2. Menu Page (menu.html)
-3. Rewards Page (rewards.html) - 5% Completion 
-4. Locate Us Page (locate.html) - 80% Completion
+# Main Page 
+1. Home Page  
+2. Menu Page 
+3. Rewards Page 
+4. Locate Us Page 
 
-# 1. Home Page (Zhen Yong)
-1. Login Page - 80% Completion
-2. Sign Up Page - 70% Completion 
+# 1. Home Page 
+1. Login Page 
+2. Sign Up Page 
 3. Account Verification Page 
-4. After Login Page - 50% Completion 
-5. Forget Password - 50% Completion 
+4. After Login Page 
+5. Forget Password  
 
-# 2. Menu Page (Jia Kang)
+# 2. Menu Page 
 1. Menu Home Page 
 2. Customize Pizza 
 3. Edit Topping
@@ -25,12 +25,12 @@ The objective of this project is to design a web application for pizza order del
 5. Payment Page 
 6. Order Successful Page 
 
-# 3. Rewards Page (Zhen Yong)
-1. Redeem Points - 5% Completion 
+# 3. Rewards Page 
+1. Redeem Points 
 2. Redeem Vouchers 
 3. Pop-up Notifications
 4. View My Coupon 
     
-# 4. Locate Us Page (Jia Kang)
-1. Locate Us - 80% Completion 
+# 4. Locate Us Page 
+1. Locate Us 
 
