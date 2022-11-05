@@ -63,27 +63,72 @@ $db->close();
         <div>
 </header>
 
-<h1 class="shopping">Payment Details</h1>	
-
-<form action="order-successful.php" method="POST">
-<table class="payment-table" style = "width:40%">
+<h1>Your Shopping Cart </h1>
+		<?php
+		$items = array(
+			'Pepperoni Pizza',
+			'Mushroom Pizza',
+			'French Fries',
+			'Coleslaw',
+			'Cola',
+			'Green Tea'
+			);
+		$prices = array($peperroni_pizza_price, $mushroom_pizza_price, $french_fries_price, $coleslaw_price,$cola_price,$green_tea_price);
+		?>
+<table border="1">
+	<thead>
+	<tr>
+		<th>Item</th>
+		<th>Item Description</th>
+		<th>Price</th>
+		
+	</tr>
+	</thead>
+	<tbody>
+	<form id="order-form" action="" method="POST">
+<?php
+$total = 0;
+for ($i=0; $i < count($_SESSION['cart']); $i++){
+	$j = $i + 1;
+	echo "<tr>";
+	echo "<td align='center'>$j</td>";
+	echo "<td align='center'>" .$items[$_SESSION['cart'][$i]]. "</td>";
+	echo "<td align='center'>$";
+	echo number_format($prices[$_SESSION['cart'][$i]], 2). "</td>";
+	echo "</tr>";
+	$total = $total + $prices[$_SESSION['cart'][$i]];
+}
+?>
+	</tbody>
+	<tfoot>
+	<tr>
+	
+		<th align ='right'></th>
+		<th align='right'>Total:</th><br>
+		<th align='center'>$<?php echo number_format($total, 2); ?>
+		</th>
+	</tr>
+	</tfoot>
+</table>
+		
+	    <table border="0" style = "width:40%">
       <tr>
         <td>Name</td>
-         <td><input type="text" class="payment-details" name="name" id="name" maxlength="13" size="15" onchange="validateName()" required></td>
+         <td><input type="text" name="name" id="name" maxlength="13" size="15" onchange="validateName()"></td>
       </tr>
 	  <tr>
         <td>Email</td>
-         <td><input type="text" class="payment-details" name="email" id="email" maxlength="50" size="15" onchange="validateEmail()" required></td>
+         <td><input type="text" name="email" id="email" maxlength="50" size="15" onchange="validateEmail()"></td>
       </tr>
       <tr>
         <td>Credit Card Number</td>
-        <td> <input type="text" class="payment-details" name="credit_card_number" id="credit_card_number" maxlength="30" size="30" onchange="validatecreditcard()" required></td>
+        <td> <input type="text" name="credit_card_number" id="credit_card_number" maxlength="30" size="30" onchange="validatecreditcard()"></td>
       </tr>
       <tr>
         <td>CVV</td>
-        <td> <input type="text" class="payment-details" name="cvv" id="cvv" maxlength="60" size="15" onchange="validatecreditcard()" required></td>
+        <td> <input type="text" name="cvv" id="cvv" maxlength="60" size="15" onchange="validatecvv()"></td>
       </tr>
-</table>
+    </table>
 	
 <?php
 $db = new mysqli('localhost', 'root', '', 'connectus');
@@ -165,7 +210,7 @@ if ($db->connect_errno) {
 	</div> 
 	<!--<a href="./order-successful.php"><button type='submit' name='submit' onclick="myfunction()" id='submit'>Submit Order</button></a> -->
 	<div class="next-step-content">
-		<input class="next-step-content" type='submit' value="Proceed Payment"></p>
+		<input class = "next-step-content" type ="submit" name ='submit' value = "Submit Order" onClick="alert('An confirmation email has been sent to your account. Your pizza will be ready in 20-30 minutes. Please check and Thank You for the support')" >
 	</div> 
 </div>
 </form>
